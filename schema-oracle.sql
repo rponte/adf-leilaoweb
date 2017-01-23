@@ -1,3 +1,15 @@
+--
+-- Cria Schema (user)
+--
+drop user leilao_web cascade;
+create user leilao_web identified by "123";
+grant connect to leilao_web;
+grant create session to leilao_web;
+grant dba to leilao_web;
+
+--
+-- Cria objetos do schema
+--
 CREATE TABLE TB_FUNCIONARIO
   (
     ID    NUMBER(10,0) NOT NULL,
