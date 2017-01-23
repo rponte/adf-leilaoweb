@@ -16,6 +16,11 @@ public class UsuarioBean {
         UsuarioDao dao = new UsuarioDao();
         return dao.listaTudo();
     }
+    
+    public void remove(Usuario usuario) {
+        UsuarioDao dao = new UsuarioDao();
+        dao.remove(usuario);
+    }
 
     public void salva() {
         
