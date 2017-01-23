@@ -108,4 +108,33 @@ public class UsuarioDao {
             throw new IllegalStateException(e);
         }
     }
+
+    /**
+     * Busca usuario por login e senha
+     */
+    public Usuario buscaPor(String login, String senha) {
+        
+        try (Connection conn = factory.getConnection()) {
+            
+            Usuario usuario = null;
+            
+            String sql = "select * from TB_USUARIO where LOGIN=? and SENHA=?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, login);
+            stmt.setString(2, senha);
+            
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                usuario = new Usuario();
+                usuario.setId(rs.getInt("ID"));
+                usuario.setNome(rs.getString("NOME"));
+                usuario.setLogin(rs.getString("LOGIN"));
+                usuario.setSenha(rs.getString("SENHA"));
+            }
+            
+            return usuario;
+        } catch (SQLException e) {
+            throw new IllegalStateException(e);
+        }
+    }
 }
