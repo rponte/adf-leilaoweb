@@ -3,12 +3,19 @@ package br.com.triadworks.leilaoweb.view;
 import br.com.triadworks.leilaoweb.dao.UsuarioDao;
 import br.com.triadworks.leilaoweb.model.Usuario;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 public class UsuarioBean {
     
     private Usuario usuario = new Usuario();
+
+    public List<Usuario> getUsuarios() {
+        UsuarioDao dao = new UsuarioDao();
+        return dao.listaTudo();
+    }
 
     public void salva() {
         
