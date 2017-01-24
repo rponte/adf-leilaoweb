@@ -1,10 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<f:view xmlns:f="http://java.sun.com/jsf/core" 
-        xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-        xmlns:h="http://java.sun.com/jsf/html">
-    <af:document title="Leilão Web" id="d1">
+    <html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Leilão Web</title>
         <h:outputStylesheet library="css" name="app.css" />
+    </h:head>
+    <h:body>
         
         <div id="cabecalho">
             <ul id="menu-principal">
@@ -17,7 +20,7 @@
         <div id="conteudo">
             <div id="container">
 
-            <af:form id="f1">
+            <h:form>
                 <h1>
                     <h:outputText value="Novo Usuário" 
                             rendered="#{empty usuarioBean.usuario.id}" />
@@ -67,7 +70,7 @@
                         </h:commandLink>
                     </h:column>
                 </h:dataTable>
-            </af:form>
+            </h:form>
             </div>
         </div>
         
@@ -76,5 +79,5 @@
                 <strong>Leilão Web</strong> - TriadWorks
             </div>
         </div>
-    </af:document>
-</f:view>
+    </h:body>
+</html> 
