@@ -45,7 +45,9 @@
                 </h:inputText>
                 <h:outputLabel value="Senha" for="senha"/>
                 <h:inputSecret id="senha" value="#{usuarioBean.usuario.senha}" 
-                    required="true" label="Senha" />
+                    required="true" label="Senha">
+                    <f:validator validatorId="senhaForte" />
+                </h:inputSecret>
 
                 <div class="acoes-principais">
                     <h:commandButton value="Salvar" action="#{usuarioBean.salva}"/>
