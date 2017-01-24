@@ -50,7 +50,8 @@
                 <div class="acoes-principais">
                     <h:commandButton value="Salvar" action="#{usuarioBean.salva}"/>
                     &#160;
-                    <h:commandLink value="Cancelar" action="#{usuarioBean.cancela}" />
+                    <h:commandLink value="Cancelar" action="usuarios.xhtml" 
+                        immediate="true" />
                 </div>
                 
                 <h:dataTable
@@ -70,9 +71,10 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Ações</f:facet>
-                        <h:commandLink value="remover" action="#{usuarioBean.remove(usuario)}"/>
+                        <h:commandLink value="remover" action="#{usuarioBean.remove(usuario)}"
+                            immediate="true" />
                         &#160;
-                        <h:commandLink value="alterar">
+                        <h:commandLink value="alterar" action="usuarios.xhtml" immediate="true">
                             <f:setPropertyActionListener value="#{usuario}" 
                                     target="#{usuarioBean.usuario}" />
                         </h:commandLink>
