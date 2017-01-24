@@ -2,5 +2,8 @@
 <faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee">
   <application>
     <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+    
+    <!-- Mensagens de erro de validação -->
+    <message-bundle>Mensagens</message-bundle>
   </application>
 </faces-config>

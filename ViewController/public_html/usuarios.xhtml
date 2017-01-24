@@ -35,16 +35,17 @@
             
                 <h:outputLabel value="Nome" for="nome" />
                 <h:inputText id="nome" value="#{usuarioBean.usuario.nome}"
-                    styleClass="texto-longo" required="true" />
+                    styleClass="texto-longo" required="true" label="Nome" />
                 <h:outputLabel value="Login" for="login"/>
                 <h:inputText id="login" value="#{usuarioBean.usuario.login}" 
-                    required="true">
+                    required="true" label="Login"
+                    validatorMessage="O campo Login deve ter no mínimo 4 letras e não pode conter números">
                     <f:validateLength minimum="4" />
                     <f:validateRegex pattern="[a-zA-Z]+" />
                 </h:inputText>
                 <h:outputLabel value="Senha" for="senha"/>
                 <h:inputSecret id="senha" value="#{usuarioBean.usuario.senha}" 
-                    required="true" />
+                    required="true" label="Senha" />
 
                 <div class="acoes-principais">
                     <h:commandButton value="Salvar" action="#{usuarioBean.salva}"/>
