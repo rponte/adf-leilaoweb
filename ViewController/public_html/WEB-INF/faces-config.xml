@@ -8,8 +8,10 @@
   </application>
   
     <lifecycle>
+        <!--
         <phase-listener>
             br.com.triadworks.leilaoweb.util.CicloDeVidaListener
         </phase-listener>
+        -->
     </lifecycle>
 </faces-config>
