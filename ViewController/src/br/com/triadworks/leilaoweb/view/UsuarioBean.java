@@ -3,6 +3,8 @@ package br.com.triadworks.leilaoweb.view;
 import br.com.triadworks.leilaoweb.dao.UsuarioDao;
 import br.com.triadworks.leilaoweb.model.Usuario;
 
+import br.com.triadworks.leilaoweb.util.FacesUtils;
+
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -20,6 +22,7 @@ public class UsuarioBean {
     public void remove(Usuario usuario) {
         UsuarioDao dao = new UsuarioDao();
         dao.remove(usuario);
+        new FacesUtils().sucesso("Usuário removido com sucesso!");
     }
     
     public void cancela() {
@@ -35,6 +38,7 @@ public class UsuarioBean {
             dao.atualiza(this.usuario);
         }
         
+        new FacesUtils().sucesso("Usuário gravado com sucesso!");
         this.usuario = new Usuario(); // limpa os campos
     }
 
