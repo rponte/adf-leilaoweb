@@ -25,9 +25,13 @@ public class UsuarioBean {
     public void salva() {
         
         UsuarioDao dao = new UsuarioDao();
-        dao.adiciona(usuario);
+        if (this.usuario.getId() == null) {
+            dao.adiciona(this.usuario);
+        } else {
+            dao.atualiza(this.usuario);
+        }
         
-        this.usuario = new Usuario();
+        this.usuario = new Usuario(); // limpa os campos
     }
 
     public void setUsuario(Usuario usuario) {
