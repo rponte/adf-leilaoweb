@@ -3,16 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:f="http://java.sun.com/jsf/core" 
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
-    <h:head>
-        <title>Leilão Web</title>
-        <h:outputStylesheet library="css" name="app.css" />
-    </h:head>
-    <h:body>
-        <h:messages id="mensagens" errorClass="errors" infoClass="success" />
-
-        <div id="conteudo">
-            <div id="container">
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+    <ui:composition template="/templates/template_principal.xhtml">
+        
+        <ui:define name="corpo">
                 <fieldset id="login-form">
                     <legend>Acesse o Sistema</legend>
                     <h:form>
@@ -27,13 +23,6 @@
                         </div>
                     </h:form>
                 </fieldset>
-            </div>
-        </div>
-        
-        <div id="rodape"> 
-            <div class="rodape-bar">
-                <strong>Leilão Web</strong> - TriadWorks
-            </div>
-        </div>
-    </h:body>
+        </ui:define>
+    </ui:composition>
 </html> 
