@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" 
+        xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+   
+    <af:document title="Leilão Web" id="d1">
+        <af:form id="f1" partialTriggers="btn-salvar">
+        
+            <h:inputHidden value="#{usuarioBean.usuario.id}" />
+        
+            <af:panelHeader text="#{empty usuarioBean.usuario.id ? 'Novo Usuário' : 'Editar Usuário'}" id="ph1">
+            </af:panelHeader>
+            
+            <af:panelFormLayout id="pfl1" rows="3">
+            
+                <af:inputText label="Nome" id="nome" value="#{usuarioBean.usuario.nome}"
+                    required="true" columns="60" />
+                    
+                <af:inputText label="Login" id="login" value="#{usuarioBean.usuario.login}"
+                    required="true" >
+                    <af:validateLength minimum="4" />
+                    <af:validateRegExp pattern="[a-zA-Z]+" />
+                </af:inputText>
+                
+                <af:inputText label="Senha" id="senha" value="#{usuarioBean.usuario.senha}"
+                    required="true" secret="true" validator="senhaForte">
+                </af:inputText>
+                
+                <f:facet name="footer">
+                    <af:toolbar id="toolbar">
+                        <af:button text="Salvar" id="btn-salvar" action="#{usuarioBean.salva}"
+                         partialSubmit="true" />
+                        <af:link text="Cancelar" id="btn-cancelar" action="usuarios.xhtml" 
+                            immediate="true" />
+                    </af:toolbar>
+                </f:facet>
+            </af:panelFormLayout>
+            
+            <af:table value="#{usuarioBean.usuarios}" var="row" 
+                rowBandingInterval="0" id="t1" columnStretching="column:c3">
+                <af:column sortable="false" headerText="Id" align="start" id="c1">
+                    <af:outputText value="#{row.id}" id="ot1"/>
+                </af:column>
+                <af:column sortable="false" headerText="Login" align="start" id="c2">
+                    <af:outputText value="#{row.login}" id="ot3"/>
+                </af:column>
+                <af:column sortable="false" headerText="Nome" align="start" id="c3">
+                    <af:outputText value="#{row.nome}" id="ot2"/>
+                </af:column>
+                <af:column id="c4" headerText="Ações">
+                    <af:toolbar id="t2">
+                        <af:link text="remover" id="l1" action="#{usuarioBean.remove(row)}"
+                            immediate="true" />
+                        <af:link text="alterar" id="l2" immediate="true">
+                            <af:resetActionListener />
+                            <af:setPropertyListener from="#{row}" 
+                                to="#{usuarioBean.usuario}" type="action" />
+                        </af:link>
+                    </af:toolbar>
+                </af:column>
+            </af:table>
+        </af:form>
+    </af:document>
+</f:view>
