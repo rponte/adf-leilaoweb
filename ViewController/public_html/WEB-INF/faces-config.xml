@@ -13,5 +13,8 @@
             br.com.triadworks.leilaoweb.util.CicloDeVidaListener
         </phase-listener>
         -->
+        <phase-listener>
+            br.com.triadworks.leilaoweb.view.listener.AutorizacaoListener
+        </phase-listener>
     </lifecycle>
 </faces-config>
