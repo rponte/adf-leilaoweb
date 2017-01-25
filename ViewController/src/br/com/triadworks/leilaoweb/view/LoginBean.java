@@ -3,7 +3,10 @@ package br.com.triadworks.leilaoweb.view;
 import br.com.triadworks.leilaoweb.dao.UsuarioDao;
 import br.com.triadworks.leilaoweb.model.Usuario;
 
+import br.com.triadworks.leilaoweb.util.FacesUtils;
+
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 
 @ManagedBean // javax.faces.bean.ManagedBean
 public class LoginBean {
@@ -11,11 +14,18 @@ public class LoginBean {
     private String login;
     private String senha;
 
-    public void logar() {
-        UsuarioDao autenticador = new UsuarioDao();
-        Usuario usuario = autenticador.buscaPor(login, senha);
-        boolean loginEhValido = (usuario != null);
-        System.out.println("Login e senha são válidos? " + loginEhValido);
+    @ManagedProperty("#{usuarioWeb}")
+    private UsuarioWeb usuarioWeb;
+
+    public String logar() {
+        UsuarioDao dao = new UsuarioDao();
+        Usuario usuario = dao.buscaPor(login, senha);
+        if (usuario != null) {
+            usuarioWeb.loga(usuario); // preenche usuário na sessão
+            return "/usuarios";
+        }
+        new FacesUtils().erro("Login ou senha inválido.");
+        return null;
     }
 
     public void setLogin(String login) {
@@ -29,5 +39,11 @@ public class LoginBean {
     }
     public String getSenha() {
         return senha;
+    }
+    public void setUsuarioWeb(UsuarioWeb usuarioWeb) {
+        this.usuarioWeb = usuarioWeb;
+    }
+    public UsuarioWeb getUsuarioWeb() {
+        return usuarioWeb;
     }
 }
