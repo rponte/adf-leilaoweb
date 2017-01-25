@@ -22,7 +22,7 @@ public class LoginBean {
         Usuario usuario = dao.buscaPor(login, senha);
         if (usuario != null) {
             usuarioWeb.loga(usuario); // preenche usuário na sessão
-            return "/pages/usuarios";
+            return "/pages/usuarios?faces-redirect=true";
         }
         new FacesUtils().erro("Login ou senha inválido.");
         return null;
