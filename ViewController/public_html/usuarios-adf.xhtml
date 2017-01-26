@@ -5,7 +5,7 @@
         xmlns:h="http://java.sun.com/jsf/html">
    
     <af:document title="Leilão Web" id="d1">
-        <af:form id="f1" partialTriggers="btn-salvar">
+        <af:form id="form" partialTriggers="btn-salvar">
         
             <h:inputHidden value="#{usuarioBean.usuario.id}" />
         
@@ -31,8 +31,10 @@
                     <af:toolbar id="toolbar">
                         <af:button text="Salvar" id="btn-salvar" action="#{usuarioBean.salva}"
                          partialSubmit="true" />
-                        <af:link text="Cancelar" id="btn-cancelar" action="usuarios.xhtml" 
-                            immediate="true" />
+                        <af:link text="Cancelar" id="btn-cancelar" partialSubmit="true">
+                            <af:resetActionListener />
+                            <af:target events="action" execute="@this" render="@all" />
+                        </af:link>
                     </af:toolbar>
                 </f:facet>
             </af:panelFormLayout>
