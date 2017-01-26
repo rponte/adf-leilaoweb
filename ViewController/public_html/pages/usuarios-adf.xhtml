@@ -51,15 +51,16 @@
                     <af:outputText value="#{row.nome}" id="ot2"/>
                 </af:column>
                 <af:column id="c4" headerText="Ações">
-                    <af:toolbar id="t2">
+                    <af:panelGroupLayout id="t2" layout="horizontal">
                         <af:link text="remover" id="l1" action="#{usuarioBean.remove(row)}"
                             immediate="true" />
+                        <af:spacer width="10" id="s2"/>
                         <af:link text="alterar" id="l2" immediate="true">
                             <af:resetActionListener />
                             <af:setPropertyListener from="#{row}" 
                                 to="#{usuarioBean.usuario}" type="action" />
                         </af:link>
-                    </af:toolbar>
+                    </af:panelGroupLayout>
                 </af:column>
             </af:table>
         </af:form>
