@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="br.com.triadworks.leilaoweb.model.AppModule">
+    <AppModuleConfig name="AppModuleLocal" jbo.project="br.com.triadworks.leilaoweb.model.Model"
+                     ApplicationName="br.com.triadworks.leilaoweb.model.AppModule" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/localhostDS"/>
+      <Security AppModuleJndiName="br.com.triadworks.leilaoweb.model.AppModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="AppModuleShared" jbo.project="br.com.triadworks.leilaoweb.model.Model"
+                     ApplicationName="br.com.triadworks.leilaoweb.model.AppModule" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/localhostDS"/>
+      <Security AppModuleJndiName="br.com.triadworks.leilaoweb.model.AppModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>
