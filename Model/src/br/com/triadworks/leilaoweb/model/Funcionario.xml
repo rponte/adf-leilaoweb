@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TB_FUNCIONARIO"
   AliasName="Funcionario"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="br.com.triadworks.leilaoweb.model.FuncionarioImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Id"
     IsNotNull="true"
