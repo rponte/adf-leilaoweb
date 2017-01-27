@@ -9,7 +9,7 @@
                     <af:button actionListener="#{bindings.CreateInsert.execute}" text="Novo"
                                disabled="#{!bindings.CreateInsert.enabled}" id="b1"/>
                     <af:button actionListener="#{bindings.Delete.execute}" text="Excluir"
-                               disabled="#{!bindings.Delete.enabled}" id="b2"/>
+                               disabled="#{!bindings.Delete.enabled}" id="b2" immediate="true"/>
                 </af:group>
                 <af:group id="g1">
                     <af:button actionListener="#{bindings.Commit.execute}" text="Salvar"
