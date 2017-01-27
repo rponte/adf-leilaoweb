@@ -39,7 +39,8 @@
                                   required="#{bindings.FuncionarioView1.hints.Nome.mandatory}"
                                   columns="#{bindings.FuncionarioView1.hints.Nome.displayWidth}"
                                   maximumLength="#{bindings.FuncionarioView1.hints.Nome.precision}"
-                                  shortDesc="#{bindings.FuncionarioView1.hints.Nome.tooltip}" id="it1">
+                                  shortDesc="#{bindings.FuncionarioView1.hints.Nome.tooltip}" id="it1"
+                                  autoSubmit="true">
                         <f:validator binding="#{row.bindings.Nome.validator}"/>
                     </af:inputText>
                 </af:column>
@@ -50,7 +51,7 @@
                                   required="#{bindings.FuncionarioView1.hints.Cpf.mandatory}"
                                   columns="#{bindings.FuncionarioView1.hints.Cpf.displayWidth}"
                                   maximumLength="#{bindings.FuncionarioView1.hints.Cpf.precision}"
-                                  shortDesc="#{bindings.FuncionarioView1.hints.Cpf.tooltip}" id="it2">
+                                  shortDesc="#{bindings.FuncionarioView1.hints.Cpf.tooltip}" id="it2" autoSubmit="true">
                         <f:validator binding="#{row.bindings.Cpf.validator}"/>
                     </af:inputText>
                 </af:column>
@@ -61,7 +62,8 @@
                                   required="#{bindings.FuncionarioView1.hints.Email.mandatory}"
                                   columns="#{bindings.FuncionarioView1.hints.Email.displayWidth}"
                                   maximumLength="#{bindings.FuncionarioView1.hints.Email.precision}"
-                                  shortDesc="#{bindings.FuncionarioView1.hints.Email.tooltip}" id="it3">
+                                  shortDesc="#{bindings.FuncionarioView1.hints.Email.tooltip}" id="it3"
+                                  autoSubmit="true">
                         <f:validator binding="#{row.bindings.Email.validator}"/>
                     </af:inputText>
                 </af:column>
