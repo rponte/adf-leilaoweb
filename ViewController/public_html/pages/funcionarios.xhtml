@@ -5,8 +5,12 @@
         <af:messages id="m1"/>
         <af:form id="f1">
             <af:toolbar id="t2">
-                <af:button actionListener="#{bindings.CreateInsert.execute}" text="Novo"
-                           disabled="#{!bindings.CreateInsert.enabled}" id="b1"/>
+                <af:group id="g2">
+                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="Novo"
+                               disabled="#{!bindings.CreateInsert.enabled}" id="b1"/>
+                    <af:button actionListener="#{bindings.Delete.execute}" text="Excluir"
+                               disabled="#{!bindings.Delete.enabled}" id="b2"/>
+                </af:group>
                 <af:group id="g1">
                     <af:button actionListener="#{bindings.Commit.execute}" text="Salvar"
                                disabled="#{!bindings.Commit.enabled}" id="b3"/>
@@ -21,7 +25,7 @@
                       emptyText="#{bindings.FuncionarioView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                       rowBandingInterval="0" selectedRowKeys="#{bindings.FuncionarioView1.collectionModel.selectedRow}"
                       selectionListener="#{bindings.FuncionarioView1.collectionModel.makeCurrent}" rowSelection="single"
-                      fetchSize="#{bindings.FuncionarioView1.rangeSize}" id="t1" partialTriggers="::b1 ::b3 ::b4">
+                      fetchSize="#{bindings.FuncionarioView1.rangeSize}" id="t1" partialTriggers="::b1 ::b3 ::b4 ::b2">
                 <af:column sortProperty="#{bindings.FuncionarioView1.hints.Id.name}" sortable="true"
                            headerText="#{bindings.FuncionarioView1.hints.Id.label}" id="c1">
                     <af:outputText value="#{row.Id}" shortDesc="#{bindings.FuncionarioView1.hints.Id.tooltip}" id="ot1">
