@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.16.48" id="funcionariosPageDef"
+                Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FuncionarioView1" RangeSize="25" DataControl="AppModuleDataControl" id="FuncionarioView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="FuncionarioView1Iterator" id="FuncionarioView1">
+      <nodeDefinition DefName="br.com.triadworks.leilaoweb.model.FuncionarioView" Name="FuncionarioView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Nome"/>
+          <Item Value="Cpf"/>
+          <Item Value="Email"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
