@@ -4,12 +4,21 @@
     <af:document title="funcionarios.xhtml" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
+            <af:button actionListener="#{bindings.CreateInsert.execute}" text="Novo"
+                       disabled="#{!bindings.CreateInsert.enabled}" id="b1"/>
+            <af:button actionListener="#{bindings.Commit.execute}" text="Salvar" disabled="#{!bindings.Commit.enabled}"
+                       id="b3"/>
+            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancelar"
+                       disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b4">
+                <af:resetActionListener/>
+            </af:button>
+            
             <af:table value="#{bindings.FuncionarioView1.collectionModel}" var="row"
                       rows="#{bindings.FuncionarioView1.rangeSize}"
                       emptyText="#{bindings.FuncionarioView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                       rowBandingInterval="0" selectedRowKeys="#{bindings.FuncionarioView1.collectionModel.selectedRow}"
                       selectionListener="#{bindings.FuncionarioView1.collectionModel.makeCurrent}" rowSelection="single"
-                      fetchSize="#{bindings.FuncionarioView1.rangeSize}" id="t1">
+                      fetchSize="#{bindings.FuncionarioView1.rangeSize}" id="t1" partialTriggers="::b1 ::b2">
                 <af:column sortProperty="#{bindings.FuncionarioView1.hints.Id.name}" sortable="true"
                            headerText="#{bindings.FuncionarioView1.hints.Id.label}" id="c1">
                     <af:outputText value="#{row.Id}" shortDesc="#{bindings.FuncionarioView1.hints.Id.tooltip}" id="ot1">
