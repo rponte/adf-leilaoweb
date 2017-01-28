@@ -44,4 +44,8 @@
     EntityAttrName="Nome"
     EntityUsage="Funcionario"
     AliasName="NOME"/>
+  <SortCriteria>
+    <Sort
+      Attribute="Nome"/>
+  </SortCriteria>
 </ViewObject>
