@@ -86,9 +86,9 @@
     ColumnType="FLOAT"
     TableName="TB_PROMOCAO"/>
   <AccessorAttribute
-    Name="Lance"
+    Name="Lances"
     Association="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdAssoc"
-    AssociationEnd="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdAssoc.Lance"
+    AssociationEnd="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdAssoc.Lances"
     AssociationOtherEnd="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdAssoc.Promocao"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>

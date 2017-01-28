@@ -72,7 +72,7 @@
     Name="Promocao"
     Association="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdAssoc"
     AssociationEnd="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdAssoc.Promocao"
-    AssociationOtherEnd="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdAssoc.Lance"
+    AssociationOtherEnd="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdAssoc.Lances"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key

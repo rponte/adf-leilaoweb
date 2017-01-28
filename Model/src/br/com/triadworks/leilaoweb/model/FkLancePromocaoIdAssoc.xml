@@ -25,13 +25,13 @@
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
-    Name="Lance"
+    Name="Lances"
     Cardinality="-1"
     Owner="br.com.triadworks.leilaoweb.model.Lance">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="Lance"/>
+      <Attr Name="_finderName" Value="Lances"/>
       <Attr Name="_foreignKey" Value="br.com.triadworks.leilaoweb.model.Lance.FkLancePromocaoId"/>
     </DesignTime>
     <AttrArray Name="Attributes">
