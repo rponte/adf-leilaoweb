@@ -39,6 +39,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="11"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="br.com.triadworks.leilaoweb.model.Funcionario.Cpf_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Email"
@@ -85,4 +91,8 @@
       <Item Value="br.com.triadworks.leilaoweb.model.Funcionario.Cpf"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="br.com.triadworks.leilaoweb.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>
