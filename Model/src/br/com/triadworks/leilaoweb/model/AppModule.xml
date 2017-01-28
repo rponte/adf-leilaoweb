@@ -10,4 +10,19 @@
   <ViewUsage
     Name="FuncionarioView1"
     ViewObjectName="br.com.triadworks.leilaoweb.model.FuncionarioView"/>
+  <ViewUsage
+    Name="LanceView1"
+    ViewObjectName="br.com.triadworks.leilaoweb.model.LanceView"/>
+  <ViewUsage
+    Name="PromocaoView1"
+    ViewObjectName="br.com.triadworks.leilaoweb.model.PromocaoView"/>
+  <ViewUsage
+    Name="LanceView2"
+    ViewObjectName="br.com.triadworks.leilaoweb.model.LanceView"/>
+  <ViewLinkUsage
+    Name="FkLancePromocaoIdLink1"
+    ViewLinkObjectName="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdLink"
+    SrcViewUsageName="br.com.triadworks.leilaoweb.model.AppModule.PromocaoView1"
+    DstViewUsageName="br.com.triadworks.leilaoweb.model.AppModule.LanceView2"
+    Reversed="false"/>
 </AppModule>
