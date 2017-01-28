@@ -26,7 +26,7 @@
             <af:spacer width="10" height="10" id="s1"/>
             <af:table value="#{bindings.FuncionarioView1.collectionModel}" var="row"
                       rows="#{bindings.FuncionarioView1.rangeSize}"
-                      emptyText="#{bindings.FuncionarioView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      emptyText="#{bindings.FuncionarioView1.viewable ? 'Não há dados para serem exibidos.' : 'Acesso negado.'}"
                       rowBandingInterval="0" selectedRowKeys="#{bindings.FuncionarioView1.collectionModel.selectedRow}"
                       selectionListener="#{bindings.FuncionarioView1.collectionModel.makeCurrent}" rowSelection="single"
                       fetchSize="#{bindings.FuncionarioView1.rangeSize}" id="t1" partialTriggers="::b1 ::b3 ::b4 ::b2"
