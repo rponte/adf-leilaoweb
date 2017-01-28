@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-    <af:document title="funcionarios.xhtml" id="d1">
+    <af:document title="Leilão Web" id="d1">
         <af:messages id="m1"/>
+        <af:panelHeader text="Cadastro de Funcionários" id="ph1">
+        </af:panelHeader>
+        
         <af:form id="f1">
             <af:toolbar id="t2">
                 <af:group id="g2">
@@ -20,12 +23,14 @@
                     </af:button>
                 </af:group>
             </af:toolbar>
+            <af:spacer width="10" height="10" id="s1"/>
             <af:table value="#{bindings.FuncionarioView1.collectionModel}" var="row"
                       rows="#{bindings.FuncionarioView1.rangeSize}"
                       emptyText="#{bindings.FuncionarioView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                       rowBandingInterval="0" selectedRowKeys="#{bindings.FuncionarioView1.collectionModel.selectedRow}"
                       selectionListener="#{bindings.FuncionarioView1.collectionModel.makeCurrent}" rowSelection="single"
-                      fetchSize="#{bindings.FuncionarioView1.rangeSize}" id="t1" partialTriggers="::b1 ::b3 ::b4 ::b2">
+                      fetchSize="#{bindings.FuncionarioView1.rangeSize}" id="t1" partialTriggers="::b1 ::b3 ::b4 ::b2"
+                      columnStretching="last">
                 <af:column sortProperty="#{bindings.FuncionarioView1.hints.Id.name}" sortable="true"
                            headerText="#{bindings.FuncionarioView1.hints.Id.label}" id="c1">
                     <af:outputText value="#{row.Id}" shortDesc="#{bindings.FuncionarioView1.hints.Id.tooltip}" id="ot1">
@@ -33,7 +38,7 @@
                     </af:outputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.FuncionarioView1.hints.Nome.name}" sortable="true"
-                           headerText="#{bindings.FuncionarioView1.hints.Nome.label}" id="c2">
+                           headerText="#{bindings.FuncionarioView1.hints.Nome.label}" id="c2" width="200">
                     <af:inputText value="#{row.bindings.Nome.inputValue}"
                                   label="#{bindings.FuncionarioView1.hints.Nome.label}"
                                   required="#{bindings.FuncionarioView1.hints.Nome.mandatory}"
