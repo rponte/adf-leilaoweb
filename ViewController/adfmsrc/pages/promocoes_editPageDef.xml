@@ -37,5 +37,7 @@
         <Item Value="ReceberEmDinheiro"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="PromocaoView1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl.PromocaoView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
   </bindings>
 </pageDefinition>

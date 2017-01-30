@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2"></adfc-config>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="promocoes-new">
+    <page>/pages/promocoes-edit.xhtml</page>
+    <bookmark>
+      <method>#{data.br_com_triadworks_leilaoweb_view_promocoes_editPageDef.CreateInsert.execute}</method>
+    </bookmark>
+  </view>
+</adfc-config>
