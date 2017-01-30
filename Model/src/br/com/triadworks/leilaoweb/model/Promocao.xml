@@ -28,7 +28,14 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TB_PROMOCAO"/>
+    TableName="TB_PROMOCAO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="br.com.triadworks.leilaoweb.model.Promocao.DataEncerramento_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="LocalEntrega"
     Precision="60"
@@ -40,6 +47,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="60"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="br.com.triadworks.leilaoweb.model.Promocao.LocalEntrega_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Nome"
@@ -62,7 +75,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="TB_PROMOCAO"/>
+    TableName="TB_PROMOCAO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="br.com.triadworks.leilaoweb.model.Promocao.ReceberEmDinheiro_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Status"
     IsNotNull="true"
@@ -84,7 +104,14 @@
     SQLType="FLOAT"
     Type="java.lang.Float"
     ColumnType="FLOAT"
-    TableName="TB_PROMOCAO"/>
+    TableName="TB_PROMOCAO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="br.com.triadworks.leilaoweb.model.Promocao.ValorMaximoLance_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Lances"
     Association="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdAssoc"
@@ -102,4 +129,8 @@
       <Item Value="br.com.triadworks.leilaoweb.model.Promocao.Id"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="br.com.triadworks.leilaoweb.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>
