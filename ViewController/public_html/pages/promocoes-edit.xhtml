@@ -42,15 +42,13 @@
                               shortDesc="#{bindings.LocalEntrega.hints.tooltip}" id="it4">
                     <f:validator binding="#{bindings.LocalEntrega.validator}"/>
                 </af:inputText>
-                <af:inputText value="#{bindings.ReceberEmDinheiro.inputValue}"
-                              label="#{bindings.ReceberEmDinheiro.hints.label}"
-                              required="#{bindings.ReceberEmDinheiro.hints.mandatory}"
-                              columns="#{bindings.ReceberEmDinheiro.hints.displayWidth}"
-                              maximumLength="#{bindings.ReceberEmDinheiro.hints.precision}"
-                              shortDesc="#{bindings.ReceberEmDinheiro.hints.tooltip}" id="it5">
+                <af:selectBooleanCheckbox value="#{bindings.ReceberEmDinheiro.inputValue}"
+                                          label="#{bindings.ReceberEmDinheiro.hints.label}"
+                                          required="#{bindings.ReceberEmDinheiro.hints.mandatory}"
+                                          shortDesc="#{bindings.ReceberEmDinheiro.hints.tooltip}" id="it5"
+                                          >
                     <f:validator binding="#{bindings.ReceberEmDinheiro.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.ReceberEmDinheiro.format}"/>
-                </af:inputText>
+                </af:selectBooleanCheckbox>
                 <f:facet name="footer">
                     <af:button text="Submit" id="b1"/>
                 </f:facet>
