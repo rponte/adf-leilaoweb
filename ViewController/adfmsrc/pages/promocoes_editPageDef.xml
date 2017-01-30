@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.16.48" id="promocoes_editPageDef"
+                Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PromocaoView1" RangeSize="25" DataControl="AppModuleDataControl" id="PromocaoView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PromocaoView1Iterator" id="Nome">
+      <AttrNames>
+        <Item Value="Nome"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PromocaoView1Iterator" id="DataEncerramento">
+      <AttrNames>
+        <Item Value="DataEncerramento"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PromocaoView1Iterator" id="Status">
+      <AttrNames>
+        <Item Value="Status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PromocaoView1Iterator" id="ValorMaximoLance">
+      <AttrNames>
+        <Item Value="ValorMaximoLance"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PromocaoView1Iterator" id="LocalEntrega">
+      <AttrNames>
+        <Item Value="LocalEntrega"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PromocaoView1Iterator" id="ReceberEmDinheiro">
+      <AttrNames>
+        <Item Value="ReceberEmDinheiro"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

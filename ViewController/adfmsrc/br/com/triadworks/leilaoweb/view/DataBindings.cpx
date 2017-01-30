@@ -3,9 +3,11 @@
              SeparateXMLFiles="false" Package="br.com.triadworks.leilaoweb.view" ClientType="Generic">
   <pageMap>
     <page path="/pages/funcionarios.xhtml" usageId="br_com_triadworks_leilaoweb_view_funcionariosPageDef"/>
+    <page path="/pages/promocoes-edit.xhtml" usageId="br_com_triadworks_leilaoweb_view_promocoes_editPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="br_com_triadworks_leilaoweb_view_funcionariosPageDef" path="pages.funcionariosPageDef"/>
+    <page id="br_com_triadworks_leilaoweb_view_promocoes_editPageDef" path="pages.promocoes_editPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="br.com.triadworks.leilaoweb.model"
