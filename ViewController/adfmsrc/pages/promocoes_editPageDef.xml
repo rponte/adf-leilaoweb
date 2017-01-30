@@ -17,11 +17,6 @@
         <Item Value="DataEncerramento"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="PromocaoView1Iterator" id="Status">
-      <AttrNames>
-        <Item Value="Status"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="PromocaoView1Iterator" id="ValorMaximoLance">
       <AttrNames>
         <Item Value="ValorMaximoLance"/>
@@ -39,5 +34,7 @@
     </attributeValues>
     <action IterBinding="PromocaoView1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl.PromocaoView1"
             DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <list IterBinding="PromocaoView1Iterator" StaticList="false" Uses="LOV_Status" id="Status1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

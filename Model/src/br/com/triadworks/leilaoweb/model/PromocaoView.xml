@@ -13,6 +13,27 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="StatusDaPromocaoViewList1"
+    ViewObjectName="br.com.triadworks.leilaoweb.model.lists.StatusDaPromocaoViewList"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Status"
+    ListVOName="StatusDaPromocaoViewList1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Status"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Promocao"
     Entity="br.com.triadworks.leilaoweb.model.Promocao"/>
@@ -55,7 +76,15 @@
     PrecisionRule="true"
     EntityAttrName="Status"
     EntityUsage="Promocao"
-    AliasName="STATUS"/>
+    AliasName="STATUS"
+    LOVName="LOV_Status">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ValorMaximoLance"
     IsNotNull="true"

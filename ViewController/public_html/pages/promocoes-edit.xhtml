@@ -19,13 +19,13 @@
                     <f:validator binding="#{bindings.DataEncerramento.validator}"/>
                     <af:convertDateTime pattern="#{bindings.DataEncerramento.format}"/>
                 </af:inputDate>
-                <af:inputText value="#{bindings.Status.inputValue}" label="#{bindings.Status.hints.label}"
-                              required="#{bindings.Status.hints.mandatory}"
-                              columns="#{bindings.Status.hints.displayWidth}"
-                              maximumLength="#{bindings.Status.hints.precision}"
-                              shortDesc="#{bindings.Status.hints.tooltip}" id="it2">
-                    <f:validator binding="#{bindings.Status.validator}"/>
-                </af:inputText>
+                <af:spacer height="1" id="s1"/>
+                <af:selectOneChoice value="#{bindings.Status1.inputValue}" label="#{bindings.Status1.label}"
+                                    required="#{bindings.Status1.hints.mandatory}"
+                                    shortDesc="#{bindings.Status1.hints.tooltip}" id="soc1">
+                    <f:selectItems value="#{bindings.Status1.items}" id="si1"/>
+                    <f:validator binding="#{bindings.Status1.validator}"/>
+                </af:selectOneChoice>
                 <af:inputText value="#{bindings.ValorMaximoLance.inputValue}"
                               label="#{bindings.ValorMaximoLance.hints.label}"
                               required="#{bindings.ValorMaximoLance.hints.mandatory}"
