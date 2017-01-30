@@ -15,6 +15,14 @@
     <Attr Name="_appModuleNames0" Value="br.com.triadworks.leilaoweb.model.AppModule"/>
   </DesignTime>
   <Containee
+    Name="lists"
+    PackageName="br.com.triadworks.leilaoweb.model.lists"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="model"
     PackageName="br.com.triadworks.leilaoweb.model"
     ObjectType="JboPackage">
