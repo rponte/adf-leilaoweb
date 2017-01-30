@@ -35,13 +35,12 @@
                     <f:validator binding="#{bindings.ValorMaximoLance.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.ValorMaximoLance.format}"/>
                 </af:inputText>
-                <af:inputText value="#{bindings.LocalEntrega.inputValue}" label="#{bindings.LocalEntrega.hints.label}"
-                              required="#{bindings.LocalEntrega.hints.mandatory}"
-                              columns="#{bindings.LocalEntrega.hints.displayWidth}"
-                              maximumLength="#{bindings.LocalEntrega.hints.precision}"
-                              shortDesc="#{bindings.LocalEntrega.hints.tooltip}" id="it4">
+                <af:selectOneRadio value="#{bindings.LocalEntrega.inputValue}" label="#{bindings.LocalEntrega.label}"
+                                   required="#{bindings.LocalEntrega.hints.mandatory}"
+                                   shortDesc="#{bindings.LocalEntrega.hints.tooltip}" id="sor1">
+                    <f:selectItems value="#{bindings.LocalEntrega.items}" id="si2"/>
                     <f:validator binding="#{bindings.LocalEntrega.validator}"/>
-                </af:inputText>
+                </af:selectOneRadio>
                 <af:selectBooleanCheckbox value="#{bindings.ReceberEmDinheiro.inputValue}"
                                           label="#{bindings.ReceberEmDinheiro.hints.label}"
                                           required="#{bindings.ReceberEmDinheiro.hints.mandatory}"

@@ -22,11 +22,6 @@
         <Item Value="ValorMaximoLance"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="PromocaoView1Iterator" id="LocalEntrega">
-      <AttrNames>
-        <Item Value="LocalEntrega"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="PromocaoView1Iterator" id="ReceberEmDinheiro">
       <AttrNames>
         <Item Value="ReceberEmDinheiro"/>
@@ -36,5 +31,7 @@
             DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
     <list IterBinding="PromocaoView1Iterator" StaticList="false" Uses="LOV_Status" id="Status1" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <list IterBinding="PromocaoView1Iterator" StaticList="false" Uses="LOV_LocalEntrega" id="LocalEntrega"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
