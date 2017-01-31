@@ -3,7 +3,20 @@
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="Cadastro de Promoções" id="d1">
         <af:messages id="m1"/>
-        <af:form id="f1">
+        
+        <af:panelHeader text="Cadastro de Promoções" id="ph1">
+        </af:panelHeader>
+        
+        <af:form id="f1" partialTriggers="btn-salvar btn-cancelar">
+            <af:toolbar id="t1">
+                <af:button actionListener="#{bindings.Commit.execute}" text="Salvar"
+                           disabled="#{!bindings.Commit.enabled}" id="btn-salvar"/>
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancelar"
+                           disabled="#{!bindings.Rollback.enabled}" immediate="true" 
+                           id="btn-cancelar">
+                    <af:resetActionListener/>
+                </af:button>
+            </af:toolbar>
             <af:panelFormLayout id="pfl1">
                 <af:inputText value="#{bindings.Nome.inputValue}" label="#{bindings.Nome.hints.label}"
                               required="#{bindings.Nome.hints.mandatory}" columns="#{bindings.Nome.hints.displayWidth}"
@@ -48,9 +61,6 @@
                                           >
                     <f:validator binding="#{bindings.ReceberEmDinheiro.validator}"/>
                 </af:selectBooleanCheckbox>
-                <f:facet name="footer">
-                    <af:button text="Submit" id="b1"/>
-                </f:facet>
             </af:panelFormLayout>
         </af:form>
     </af:document>

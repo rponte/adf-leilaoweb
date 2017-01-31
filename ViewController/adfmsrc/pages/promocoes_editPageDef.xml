@@ -33,5 +33,7 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="PromocaoView1Iterator" StaticList="false" Uses="LOV_LocalEntrega" id="LocalEntrega"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
   </bindings>
 </pageDefinition>
