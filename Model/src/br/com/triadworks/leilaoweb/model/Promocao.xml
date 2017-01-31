@@ -99,12 +99,13 @@
   <Attribute
     Name="ValorMaximoLance"
     IsNotNull="true"
-    Precision="126"
+    Precision="14"
     ColumnName="VALOR_MAXIMO_LANCE"
     SQLType="FLOAT"
-    Type="java.lang.Float"
-    ColumnType="FLOAT"
-    TableName="TB_PROMOCAO">
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TB_PROMOCAO"
+    Scale="2">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
