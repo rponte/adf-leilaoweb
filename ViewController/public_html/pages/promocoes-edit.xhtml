@@ -54,13 +54,9 @@
                     <f:selectItems value="#{bindings.LocalEntrega.items}" id="si2"/>
                     <f:validator binding="#{bindings.LocalEntrega.validator}"/>
                 </af:selectOneRadio>
-                <af:selectBooleanCheckbox value="#{bindings.ReceberEmDinheiro.inputValue}"
-                                          label="#{bindings.ReceberEmDinheiro.hints.label}"
-                                          required="#{bindings.ReceberEmDinheiro.hints.mandatory}"
-                                          shortDesc="#{bindings.ReceberEmDinheiro.hints.tooltip}" id="it5"
-                                          >
-                    <f:validator binding="#{bindings.ReceberEmDinheiro.validator}"/>
-                </af:selectBooleanCheckbox>
+                <af:selectBooleanCheckbox value="#{bindings.ReceberEmDinheiro1.inputValue}"
+                                          label="#{bindings.ReceberEmDinheiro1.label}"
+                                          shortDesc="#{bindings.ReceberEmDinheiro1.hints.tooltip}" id="sbc1"/>
             </af:panelFormLayout>
         </af:form>
     </af:document>

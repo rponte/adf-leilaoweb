@@ -35,5 +35,14 @@
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <button IterBinding="PromocaoView1Iterator" id="ReceberEmDinheiro1" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="ReceberEmDinheiro"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="0"/>
+      </ValueList>
+    </button>
   </bindings>
 </pageDefinition>

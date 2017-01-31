@@ -73,7 +73,7 @@
     Scale="0"
     ColumnName="RECEBER_EM_DINHEIRO"
     SQLType="NUMERIC"
-    Type="java.lang.Boolean"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="TB_PROMOCAO">
     <Properties>
