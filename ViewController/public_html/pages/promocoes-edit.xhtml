@@ -66,7 +66,7 @@
                            disabled="#{!bindings.CreateInsert1.enabled}" id="b1"/>
             </af:toolbar>
             <af:table value="#{bindings.LanceView2.collectionModel}" var="row" rows="#{bindings.LanceView2.rangeSize}"
-                      emptyText="#{bindings.LanceView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      emptyText="#{bindings.LanceView2.viewable ? 'Não há dados para serem exibidos.' : 'Acesso negado.'}"
                       rowBandingInterval="0" selectedRowKeys="#{bindings.LanceView2.collectionModel.selectedRow}"
                       selectionListener="#{bindings.LanceView2.collectionModel.makeCurrent}" rowSelection="single"
                       fetchSize="#{bindings.LanceView2.rangeSize}" id="t2" partialTriggers="::b1 l1">
