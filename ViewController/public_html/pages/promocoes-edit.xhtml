@@ -58,6 +58,60 @@
                                           label="#{bindings.ReceberEmDinheiro1.label}"
                                           shortDesc="#{bindings.ReceberEmDinheiro1.hints.tooltip}" id="sbc1"/>
             </af:panelFormLayout>
+            
+            <af:table value="#{bindings.LanceView2.collectionModel}" var="row" rows="#{bindings.LanceView2.rangeSize}"
+                      emptyText="#{bindings.LanceView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" selectedRowKeys="#{bindings.LanceView2.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.LanceView2.collectionModel.makeCurrent}" rowSelection="single"
+                      fetchSize="#{bindings.LanceView2.rangeSize}" id="t2">
+                <af:column sortProperty="#{bindings.LanceView2.hints.DataCriacao.name}" sortable="true"
+                           headerText="#{bindings.LanceView2.hints.DataCriacao.label}" id="c1">
+                    <af:inputDate value="#{row.bindings.DataCriacao.inputValue}"
+                                  label="#{bindings.LanceView2.hints.DataCriacao.label}"
+                                  required="#{bindings.LanceView2.hints.DataCriacao.mandatory}"
+                                  columns="#{bindings.LanceView2.hints.DataCriacao.displayWidth}"
+                                  shortDesc="#{bindings.LanceView2.hints.DataCriacao.tooltip}" id="id2">
+                        <f:validator binding="#{row.bindings.DataCriacao.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.LanceView2.hints.DataCriacao.format}"/>
+                    </af:inputDate>
+                </af:column>
+                <af:column sortProperty="#{bindings.LanceView2.hints.FuncionarioId.name}" sortable="true"
+                           headerText="#{bindings.LanceView2.hints.FuncionarioId.label}" id="c2">
+                    <af:inputText value="#{row.bindings.FuncionarioId.inputValue}"
+                                  label="#{bindings.LanceView2.hints.FuncionarioId.label}"
+                                  required="#{bindings.LanceView2.hints.FuncionarioId.mandatory}"
+                                  columns="#{bindings.LanceView2.hints.FuncionarioId.displayWidth}"
+                                  maximumLength="#{bindings.LanceView2.hints.FuncionarioId.precision}"
+                                  shortDesc="#{bindings.LanceView2.hints.FuncionarioId.tooltip}" id="it2">
+                        <f:validator binding="#{row.bindings.FuncionarioId.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.LanceView2.hints.FuncionarioId.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.LanceView2.hints.Valor.name}" sortable="true"
+                           headerText="#{bindings.LanceView2.hints.Valor.label}" id="c3">
+                    <af:inputText value="#{row.bindings.Valor.inputValue}"
+                                  label="#{bindings.LanceView2.hints.Valor.label}"
+                                  required="#{bindings.LanceView2.hints.Valor.mandatory}"
+                                  columns="#{bindings.LanceView2.hints.Valor.displayWidth}"
+                                  maximumLength="#{bindings.LanceView2.hints.Valor.precision}"
+                                  shortDesc="#{bindings.LanceView2.hints.Valor.tooltip}" id="it4">
+                        <f:validator binding="#{row.bindings.Valor.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.LanceView2.hints.Valor.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.LanceView2.hints.CupomNumero.name}" sortable="true"
+                           headerText="#{bindings.LanceView2.hints.CupomNumero.label}" id="c4">
+                    <af:inputText value="#{row.bindings.CupomNumero.inputValue}"
+                                  label="#{bindings.LanceView2.hints.CupomNumero.label}"
+                                  required="#{bindings.LanceView2.hints.CupomNumero.mandatory}"
+                                  columns="#{bindings.LanceView2.hints.CupomNumero.displayWidth}"
+                                  maximumLength="#{bindings.LanceView2.hints.CupomNumero.precision}"
+                                  shortDesc="#{bindings.LanceView2.hints.CupomNumero.tooltip}" id="it5">
+                        <f:validator binding="#{row.bindings.CupomNumero.validator}"/>
+                    </af:inputText>
+                </af:column>
+            </af:table>
         </af:form>
     </af:document>
 </f:view>

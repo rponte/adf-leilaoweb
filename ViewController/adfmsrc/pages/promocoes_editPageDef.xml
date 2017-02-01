@@ -5,6 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="PromocaoView1" RangeSize="25" DataControl="AppModuleDataControl" id="PromocaoView1Iterator"/>
+    <iterator Binds="LanceView2" RangeSize="25" DataControl="AppModuleDataControl" id="LanceView2Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PromocaoView1Iterator" id="Nome">
@@ -44,5 +45,15 @@
         <Item Value="0"/>
       </ValueList>
     </button>
+    <tree IterBinding="LanceView2Iterator" id="LanceView2">
+      <nodeDefinition DefName="br.com.triadworks.leilaoweb.model.LanceView" Name="LanceView20">
+        <AttrNames>
+          <Item Value="DataCriacao"/>
+          <Item Value="FuncionarioId"/>
+          <Item Value="Valor"/>
+          <Item Value="CupomNumero"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
