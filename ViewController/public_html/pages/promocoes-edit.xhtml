@@ -17,109 +17,117 @@
                     <af:resetActionListener/>
                 </af:button>
             </af:toolbar>
-            <af:panelFormLayout id="pfl1">
-                <af:inputText value="#{bindings.Nome.inputValue}" label="#{bindings.Nome.hints.label}"
-                              required="#{bindings.Nome.hints.mandatory}" columns="#{bindings.Nome.hints.displayWidth}"
-                              maximumLength="#{bindings.Nome.hints.precision}"
-                              shortDesc="#{bindings.Nome.hints.tooltip}" id="it1">
-                    <f:validator binding="#{bindings.Nome.validator}"/>
-                </af:inputText>
-                <af:inputDate value="#{bindings.DataEncerramento.inputValue}"
-                              label="#{bindings.DataEncerramento.hints.label}"
-                              required="#{bindings.DataEncerramento.hints.mandatory}"
-                              columns="#{bindings.DataEncerramento.hints.displayWidth}"
-                              shortDesc="#{bindings.DataEncerramento.hints.tooltip}" id="id1">
-                    <f:validator binding="#{bindings.DataEncerramento.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.DataEncerramento.format}"/>
-                </af:inputDate>
-                <af:spacer height="1" id="s1"/>
-                <af:selectOneChoice value="#{bindings.Status1.inputValue}" label="#{bindings.Status1.label}"
-                                    required="#{bindings.Status1.hints.mandatory}"
-                                    shortDesc="#{bindings.Status1.hints.tooltip}" id="soc1">
-                    <f:selectItems value="#{bindings.Status1.items}" id="si1"/>
-                    <f:validator binding="#{bindings.Status1.validator}"/>
-                </af:selectOneChoice>
-                <af:inputText value="#{bindings.ValorMaximoLance.inputValue}"
-                              label="#{bindings.ValorMaximoLance.hints.label}"
-                              required="#{bindings.ValorMaximoLance.hints.mandatory}"
-                              columns="#{bindings.ValorMaximoLance.hints.displayWidth}"
-                              maximumLength="#{bindings.ValorMaximoLance.hints.precision}"
-                              shortDesc="#{bindings.ValorMaximoLance.hints.tooltip}" id="it3">
-                    <f:validator binding="#{bindings.ValorMaximoLance.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.ValorMaximoLance.format}"/>
-                </af:inputText>
-                <af:selectOneRadio value="#{bindings.LocalEntrega.inputValue}" label="#{bindings.LocalEntrega.label}"
-                                   required="#{bindings.LocalEntrega.hints.mandatory}"
-                                   shortDesc="#{bindings.LocalEntrega.hints.tooltip}" id="sor1">
-                    <f:selectItems value="#{bindings.LocalEntrega.items}" id="si2"/>
-                    <f:validator binding="#{bindings.LocalEntrega.validator}"/>
-                </af:selectOneRadio>
-                <af:selectBooleanCheckbox value="#{bindings.ReceberEmDinheiro1.inputValue}"
-                                          label="#{bindings.ReceberEmDinheiro1.label}"
-                                          shortDesc="#{bindings.ReceberEmDinheiro1.hints.tooltip}" id="sbc1"/>
-            </af:panelFormLayout>
-            
-            <af:spacer width="10" height="10" id="s2"/>
-            
-            <af:toolbar id="t3">
-                <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Novo Lance"
-                           disabled="#{!bindings.CreateInsert1.enabled}" id="b1"/>
-            </af:toolbar>
-            <af:table value="#{bindings.LanceView2.collectionModel}" var="row" rows="#{bindings.LanceView2.rangeSize}"
-                      emptyText="#{bindings.LanceView2.viewable ? 'Não há dados para serem exibidos.' : 'Acesso negado.'}"
-                      rowBandingInterval="0" selectedRowKeys="#{bindings.LanceView2.collectionModel.selectedRow}"
-                      selectionListener="#{bindings.LanceView2.collectionModel.makeCurrent}" rowSelection="single"
-                      fetchSize="#{bindings.LanceView2.rangeSize}" id="t2" partialTriggers="::b1 l1">
-                <af:column sortProperty="#{bindings.LanceView2.hints.DataCriacao.name}" sortable="true"
-                           headerText="#{bindings.LanceView2.hints.DataCriacao.label}" id="c1">
-                    <af:inputDate value="#{row.bindings.DataCriacao.inputValue}"
-                                  label="#{bindings.LanceView2.hints.DataCriacao.label}"
-                                  required="#{bindings.LanceView2.hints.DataCriacao.mandatory}"
-                                  columns="#{bindings.LanceView2.hints.DataCriacao.displayWidth}"
-                                  shortDesc="#{bindings.LanceView2.hints.DataCriacao.tooltip}" id="id2">
-                        <f:validator binding="#{row.bindings.DataCriacao.validator}"/>
-                        <af:convertDateTime pattern="#{bindings.LanceView2.hints.DataCriacao.format}"/>
+            <af:panelBox text="Informações da Promoção" id="pb1" immediate="true">
+                <f:facet name="toolbar"/>
+                <af:panelFormLayout id="pfl1">
+                    <af:inputText value="#{bindings.Nome.inputValue}" label="#{bindings.Nome.hints.label}"
+                                  required="#{bindings.Nome.hints.mandatory}"
+                                  columns="#{bindings.Nome.hints.displayWidth}"
+                                  maximumLength="#{bindings.Nome.hints.precision}"
+                                  shortDesc="#{bindings.Nome.hints.tooltip}" id="it1">
+                        <f:validator binding="#{bindings.Nome.validator}"/>
+                    </af:inputText>
+                    <af:inputDate value="#{bindings.DataEncerramento.inputValue}"
+                                  label="#{bindings.DataEncerramento.hints.label}"
+                                  required="#{bindings.DataEncerramento.hints.mandatory}"
+                                  columns="#{bindings.DataEncerramento.hints.displayWidth}"
+                                  shortDesc="#{bindings.DataEncerramento.hints.tooltip}" id="id1">
+                        <f:validator binding="#{bindings.DataEncerramento.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.DataEncerramento.format}"/>
                     </af:inputDate>
-                </af:column>
-                <af:column sortProperty="#{bindings.LanceView2.hints.FuncionarioId.name}" sortable="true"
-                           headerText="#{bindings.LanceView2.hints.FuncionarioId.label}" id="c2">
-                    <af:selectOneChoice value="#{row.bindings.FuncionarioId.inputValue}"
-                                        label="#{row.bindings.FuncionarioId.label}"
-                                        required="#{bindings.LanceView2.hints.FuncionarioId.mandatory}"
-                                        shortDesc="#{bindings.LanceView2.hints.FuncionarioId.tooltip}" id="soc2">
-                        <f:selectItems value="#{row.bindings.FuncionarioId.items}" id="si3"/>
-                        <f:validator binding="#{row.bindings.FuncionarioId.validator}"/>
+                    <af:spacer height="1" id="s1"/>
+                    <af:selectOneChoice value="#{bindings.Status1.inputValue}" label="#{bindings.Status1.label}"
+                                        required="#{bindings.Status1.hints.mandatory}"
+                                        shortDesc="#{bindings.Status1.hints.tooltip}" id="soc1">
+                        <f:selectItems value="#{bindings.Status1.items}" id="si1"/>
+                        <f:validator binding="#{bindings.Status1.validator}"/>
                     </af:selectOneChoice>
-                </af:column>
-                <af:column sortProperty="#{bindings.LanceView2.hints.Valor.name}" sortable="true"
-                           headerText="#{bindings.LanceView2.hints.Valor.label}" id="c3">
-                    <af:inputText value="#{row.bindings.Valor.inputValue}"
-                                  label="#{bindings.LanceView2.hints.Valor.label}"
-                                  required="#{bindings.LanceView2.hints.Valor.mandatory}"
-                                  columns="#{bindings.LanceView2.hints.Valor.displayWidth}"
-                                  maximumLength="#{bindings.LanceView2.hints.Valor.precision}"
-                                  shortDesc="#{bindings.LanceView2.hints.Valor.tooltip}" id="it4">
-                        <f:validator binding="#{row.bindings.Valor.validator}"/>
-                        <af:convertNumber groupingUsed="false" pattern="#{bindings.LanceView2.hints.Valor.format}"/>
+                    <af:inputText value="#{bindings.ValorMaximoLance.inputValue}"
+                                  label="#{bindings.ValorMaximoLance.hints.label}"
+                                  required="#{bindings.ValorMaximoLance.hints.mandatory}"
+                                  columns="#{bindings.ValorMaximoLance.hints.displayWidth}"
+                                  maximumLength="#{bindings.ValorMaximoLance.hints.precision}"
+                                  shortDesc="#{bindings.ValorMaximoLance.hints.tooltip}" id="it3">
+                        <f:validator binding="#{bindings.ValorMaximoLance.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.ValorMaximoLance.format}"/>
                     </af:inputText>
-                </af:column>
-                <af:column sortProperty="#{bindings.LanceView2.hints.CupomNumero.name}" sortable="true"
-                           headerText="#{bindings.LanceView2.hints.CupomNumero.label}" id="c4">
-                    <af:inputText value="#{row.bindings.CupomNumero.inputValue}"
-                                  label="#{bindings.LanceView2.hints.CupomNumero.label}"
-                                  required="#{bindings.LanceView2.hints.CupomNumero.mandatory}"
-                                  columns="#{bindings.LanceView2.hints.CupomNumero.displayWidth}"
-                                  maximumLength="#{bindings.LanceView2.hints.CupomNumero.precision}"
-                                  shortDesc="#{bindings.LanceView2.hints.CupomNumero.tooltip}" id="it5">
-                        <f:validator binding="#{row.bindings.CupomNumero.validator}"/>
-                    </af:inputText>
-                </af:column>
-                <af:column id="c5">
-                    <af:link actionListener="#{bindings.removeRowWithKey.execute}" text="Excluir"
-                             disabled="#{!bindings.removeRowWithKey.enabled}" id="l1" partialSubmit="true"
-                             immediate="true"/>
-                </af:column>
-            </af:table>
+                    <af:selectOneRadio value="#{bindings.LocalEntrega.inputValue}"
+                                       label="#{bindings.LocalEntrega.label}"
+                                       required="#{bindings.LocalEntrega.hints.mandatory}"
+                                       shortDesc="#{bindings.LocalEntrega.hints.tooltip}" id="sor1">
+                        <f:selectItems value="#{bindings.LocalEntrega.items}" id="si2"/>
+                        <f:validator binding="#{bindings.LocalEntrega.validator}"/>
+                    </af:selectOneRadio>
+                    <af:selectBooleanCheckbox value="#{bindings.ReceberEmDinheiro1.inputValue}"
+                                              label="#{bindings.ReceberEmDinheiro1.label}"
+                                              shortDesc="#{bindings.ReceberEmDinheiro1.hints.tooltip}" id="sbc1"/>
+                </af:panelFormLayout>
+            </af:panelBox>
+            <af:spacer width="10" height="10" id="s2"/>
+            <af:panelBox text="Informações dos Lances" id="pb2" immediate="true">
+                <f:facet name="toolbar">
+                    <af:toolbar id="t3">
+                        <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Novo Lance"
+                                   disabled="#{!bindings.CreateInsert1.enabled}" id="b1"/>
+                    </af:toolbar>
+                </f:facet>
+                <af:table value="#{bindings.LanceView2.collectionModel}" var="row"
+                          rows="#{bindings.LanceView2.rangeSize}"
+                          emptyText="#{bindings.LanceView2.viewable ? 'Não há dados para serem exibidos.' : 'Acesso negado.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.LanceView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.LanceView2.collectionModel.makeCurrent}" rowSelection="single"
+                          fetchSize="#{bindings.LanceView2.rangeSize}" id="t2" partialTriggers="::b1 l1">
+                    <af:column sortProperty="#{bindings.LanceView2.hints.DataCriacao.name}" sortable="true"
+                               headerText="#{bindings.LanceView2.hints.DataCriacao.label}" id="c1">
+                        <af:inputDate value="#{row.bindings.DataCriacao.inputValue}"
+                                      label="#{bindings.LanceView2.hints.DataCriacao.label}"
+                                      required="#{bindings.LanceView2.hints.DataCriacao.mandatory}"
+                                      columns="#{bindings.LanceView2.hints.DataCriacao.displayWidth}"
+                                      shortDesc="#{bindings.LanceView2.hints.DataCriacao.tooltip}" id="id2">
+                            <f:validator binding="#{row.bindings.DataCriacao.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.LanceView2.hints.DataCriacao.format}"/>
+                        </af:inputDate>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.LanceView2.hints.FuncionarioId.name}" sortable="true"
+                               headerText="#{bindings.LanceView2.hints.FuncionarioId.label}" id="c2">
+                        <af:selectOneChoice value="#{row.bindings.FuncionarioId.inputValue}"
+                                            label="#{row.bindings.FuncionarioId.label}"
+                                            required="#{bindings.LanceView2.hints.FuncionarioId.mandatory}"
+                                            shortDesc="#{bindings.LanceView2.hints.FuncionarioId.tooltip}" id="soc2">
+                            <f:selectItems value="#{row.bindings.FuncionarioId.items}" id="si3"/>
+                            <f:validator binding="#{row.bindings.FuncionarioId.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.LanceView2.hints.Valor.name}" sortable="true"
+                               headerText="#{bindings.LanceView2.hints.Valor.label}" id="c3">
+                        <af:inputText value="#{row.bindings.Valor.inputValue}"
+                                      label="#{bindings.LanceView2.hints.Valor.label}"
+                                      required="#{bindings.LanceView2.hints.Valor.mandatory}"
+                                      columns="#{bindings.LanceView2.hints.Valor.displayWidth}"
+                                      maximumLength="#{bindings.LanceView2.hints.Valor.precision}"
+                                      shortDesc="#{bindings.LanceView2.hints.Valor.tooltip}" id="it4">
+                            <f:validator binding="#{row.bindings.Valor.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.LanceView2.hints.Valor.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.LanceView2.hints.CupomNumero.name}" sortable="true"
+                               headerText="#{bindings.LanceView2.hints.CupomNumero.label}" id="c4">
+                        <af:inputText value="#{row.bindings.CupomNumero.inputValue}"
+                                      label="#{bindings.LanceView2.hints.CupomNumero.label}"
+                                      required="#{bindings.LanceView2.hints.CupomNumero.mandatory}"
+                                      columns="#{bindings.LanceView2.hints.CupomNumero.displayWidth}"
+                                      maximumLength="#{bindings.LanceView2.hints.CupomNumero.precision}"
+                                      shortDesc="#{bindings.LanceView2.hints.CupomNumero.tooltip}" id="it5">
+                            <f:validator binding="#{row.bindings.CupomNumero.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column id="c5">
+                        <af:link actionListener="#{bindings.removeRowWithKey.execute}" text="Excluir"
+                                 disabled="#{!bindings.removeRowWithKey.enabled}" id="l1" partialSubmit="true"
+                                 immediate="true"/>
+                    </af:column>
+                </af:table>
+            </af:panelBox>
         </af:form>
     </af:document>
 </f:view>
