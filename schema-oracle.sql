@@ -62,3 +62,9 @@ CREATE sequence leilao_web.SEQ_FUNCIONARIO;
 CREATE sequence leilao_web.SEQ_LANCE;
 CREATE sequence leilao_web.SEQ_PROMOCAO;
 CREATE sequence leilao_web.SEQ_USUARIO;
+
+--
+-- Popula tabelas
+--
+INSERT INTO leilao_web.TB_USUARIO(ID, LOGIN, NOME, SENHA)
+  VALUES(leilao_web.SEQ_USUARIO.nextval, 'admin', 'Administrador', '123@');
