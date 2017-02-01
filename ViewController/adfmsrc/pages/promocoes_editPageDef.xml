@@ -55,5 +55,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="LanceView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
   </bindings>
 </pageDefinition>

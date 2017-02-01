@@ -59,11 +59,17 @@
                                           shortDesc="#{bindings.ReceberEmDinheiro1.hints.tooltip}" id="sbc1"/>
             </af:panelFormLayout>
             
+            <af:spacer width="10" height="10" id="s2"/>
+            
+            <af:toolbar id="t3">
+                <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Novo Lance"
+                           disabled="#{!bindings.CreateInsert1.enabled}" id="b1"/>
+            </af:toolbar>
             <af:table value="#{bindings.LanceView2.collectionModel}" var="row" rows="#{bindings.LanceView2.rangeSize}"
                       emptyText="#{bindings.LanceView2.viewable ? 'No data to display.' : 'Access Denied.'}"
                       rowBandingInterval="0" selectedRowKeys="#{bindings.LanceView2.collectionModel.selectedRow}"
                       selectionListener="#{bindings.LanceView2.collectionModel.makeCurrent}" rowSelection="single"
-                      fetchSize="#{bindings.LanceView2.rangeSize}" id="t2">
+                      fetchSize="#{bindings.LanceView2.rangeSize}" id="t2" partialTriggers="::b1">
                 <af:column sortProperty="#{bindings.LanceView2.hints.DataCriacao.name}" sortable="true"
                            headerText="#{bindings.LanceView2.hints.DataCriacao.label}" id="c1">
                     <af:inputDate value="#{row.bindings.DataCriacao.inputValue}"
