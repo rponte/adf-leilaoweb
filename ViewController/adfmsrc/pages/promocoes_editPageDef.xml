@@ -56,5 +56,10 @@
       </nodeDefinition>
     </tree>
     <action IterBinding="LanceView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="LanceView2Iterator" id="removeRowWithKey" RequiresUpdateModel="false"
+            Action="removeRowWithKey">
+      <NamedData NDName="rowKey" NDValue="#{bindings.LanceView2Iterator.currentRowWithKeyValue}"
+                 NDType="java.lang.String"/>
+    </action>
   </bindings>
 </pageDefinition>

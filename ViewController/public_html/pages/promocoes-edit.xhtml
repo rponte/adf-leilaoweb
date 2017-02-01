@@ -69,7 +69,7 @@
                       emptyText="#{bindings.LanceView2.viewable ? 'No data to display.' : 'Access Denied.'}"
                       rowBandingInterval="0" selectedRowKeys="#{bindings.LanceView2.collectionModel.selectedRow}"
                       selectionListener="#{bindings.LanceView2.collectionModel.makeCurrent}" rowSelection="single"
-                      fetchSize="#{bindings.LanceView2.rangeSize}" id="t2" partialTriggers="::b1">
+                      fetchSize="#{bindings.LanceView2.rangeSize}" id="t2" partialTriggers="::b1 l1">
                 <af:column sortProperty="#{bindings.LanceView2.hints.DataCriacao.name}" sortable="true"
                            headerText="#{bindings.LanceView2.hints.DataCriacao.label}" id="c1">
                     <af:inputDate value="#{row.bindings.DataCriacao.inputValue}"
@@ -116,6 +116,11 @@
                                   shortDesc="#{bindings.LanceView2.hints.CupomNumero.tooltip}" id="it5">
                         <f:validator binding="#{row.bindings.CupomNumero.validator}"/>
                     </af:inputText>
+                </af:column>
+                <af:column id="c5">
+                    <af:link actionListener="#{bindings.removeRowWithKey.execute}" text="Excluir"
+                             disabled="#{!bindings.removeRowWithKey.enabled}" id="l1" partialSubmit="true"
+                             immediate="true"/>
                 </af:column>
             </af:table>
         </af:form>
