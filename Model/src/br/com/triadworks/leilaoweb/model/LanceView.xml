@@ -13,6 +13,28 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="FuncionarioView1"
+    ViewObjectName="br.com.triadworks.leilaoweb.model.FuncionarioView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FuncionarioId"
+    ListVOName="FuncionarioView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FuncionarioId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nome"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Lance"
     Entity="br.com.triadworks.leilaoweb.model.Lance"/>
@@ -48,7 +70,15 @@
     PrecisionRule="true"
     EntityAttrName="FuncionarioId"
     EntityUsage="Lance"
-    AliasName="FUNCIONARIO_ID"/>
+    AliasName="FUNCIONARIO_ID"
+    LOVName="LOV_FuncionarioId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PromocaoId"
     PrecisionRule="true"
