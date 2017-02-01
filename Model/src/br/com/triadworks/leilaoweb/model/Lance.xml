@@ -37,6 +37,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="br.com.triadworks.leilaoweb.model.Lance.CupomNumero_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="DataCriacao"
@@ -44,7 +50,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TB_LANCE"/>
+    TableName="TB_LANCE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="br.com.triadworks.leilaoweb.model.Lance.DataCriacao_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Valor"
     IsNotNull="true"
@@ -64,7 +77,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="TB_LANCE"/>
+    TableName="TB_LANCE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="br.com.triadworks.leilaoweb.model.Lance.FuncionarioId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="PromocaoId"
     Precision="10"
@@ -73,7 +93,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Long"
     ColumnType="NUMBER"
-    TableName="TB_LANCE"/>
+    TableName="TB_LANCE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="br.com.triadworks.leilaoweb.model.Lance.PromocaoId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Promocao"
     Association="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdAssoc"
@@ -113,4 +140,8 @@
       <Item Value="br.com.triadworks.leilaoweb.model.Lance.PromocaoId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="br.com.triadworks.leilaoweb.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>
