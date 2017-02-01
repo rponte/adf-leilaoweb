@@ -80,7 +80,8 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="TB_PROMOCAO">
+    TableName="TB_PROMOCAO"
+    DefaultValue="0">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
