@@ -49,6 +49,7 @@ public class LanceImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int CUPOMNUMERO = AttributesEnum.CupomNumero.index();
     public static final int DATACRIACAO = AttributesEnum.DataCriacao.index();
@@ -61,6 +62,13 @@ public class LanceImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public LanceImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("br.com.triadworks.leilaoweb.model.Lance");
     }
 
     /**
@@ -103,13 +111,6 @@ public class LanceImpl extends EntityImpl {
         return (Timestamp) getAttributeInternal(DATACRIACAO);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for DataCriacao.
-     * @param value value to set the DataCriacao
-     */
-    public void setDataCriacao(Timestamp value) {
-        setAttributeInternal(DATACRIACAO, value);
-    }
 
     /**
      * Gets the attribute value for Valor, using the alias name Valor.
@@ -173,6 +174,7 @@ public class LanceImpl extends EntityImpl {
         setAttributeInternal(PROMOCAO, value);
     }
 
+
     /**
      * @param id key constituent
 
@@ -183,15 +185,8 @@ public class LanceImpl extends EntityImpl {
     }
 
     /**
-     * @return the definition object for this instance class.
+     * Metodo invocado pelo ADF sempre que se cria uma instancia nova da entidade
      */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("br.com.triadworks.leilaoweb.model.Lance");
-    }
-
-     /**
-      * Metodo invocado pelo ADF sempre que se cria uma instancia nova da entidade
-      */
      protected void create(AttributeList attributeList) {
          super.create(attributeList);
          // preenche campo com valor da sequence

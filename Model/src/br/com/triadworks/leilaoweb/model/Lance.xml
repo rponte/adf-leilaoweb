@@ -50,11 +50,20 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TB_LANCE">
+    TableName="TB_LANCE"
+    IsUpdateable="false">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="LanceRow"/>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="br.com.triadworks.leilaoweb.model.Lance.DataCriacao_LABEL"/>
+        <FMT_FORMAT
+          ResId="br.com.triadworks.leilaoweb.model.Lance.DataCriacao_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="br.com.triadworks.leilaoweb.model.Lance.DataCriacao_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>

@@ -1,0 +1,12 @@
+//Groovy Scripts for br.com.triadworks.leilaoweb.model.Lance
+
+package br.com.triadworks.leilaoweb.model
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="DataCriacao")
+def DataCriacao_ExpressionScript_Expression()
+{
+adf.currentDateTime
+}
+
