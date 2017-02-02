@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Leilão Web" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelHeader text="Promocao" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.PesquisaDePromocoesViewCriteriaQuery.queryDescriptor}"
+                              model="#{bindings.PesquisaDePromocoesViewCriteriaQuery.queryModel}"
+                              queryListener="#{bindings.PesquisaDePromocoesViewCriteriaQuery.processQuery}"
+                              queryOperationListener="#{bindings.PesquisaDePromocoesViewCriteriaQuery.processQueryOperation}"
+                              resultComponentId="::resId1"/>
+                </af:panelHeader>
+                <af:table value="#{bindings.PromocaoView1.collectionModel}" var="row"
+                          rows="#{bindings.PromocaoView1.rangeSize}"
+                          emptyText="#{bindings.PromocaoView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.PromocaoView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.PromocaoView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.PromocaoView1.rangeSize}" id="resId1">
+                    <af:column sortProperty="#{bindings.PromocaoView1.hints.Id.name}" sortable="true"
+                               headerText="#{bindings.PromocaoView1.hints.Id.label}" id="resId1c1">
+                        <af:outputText value="#{row.Id}" shortDesc="#{bindings.PromocaoView1.hints.Id.tooltip}"
+                                       id="ot1">
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.PromocaoView1.hints.Id.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.PromocaoView1.hints.Nome.name}" sortable="true"
+                               headerText="#{bindings.PromocaoView1.hints.Nome.label}" id="resId1c2">
+                        <af:outputText value="#{row.Nome}" shortDesc="#{bindings.PromocaoView1.hints.Nome.tooltip}"
+                                       id="ot2"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.PromocaoView1.hints.DataEncerramento.name}" sortable="true"
+                               headerText="#{bindings.PromocaoView1.hints.DataEncerramento.label}" id="resId1c3">
+                        <af:outputText value="#{row.DataEncerramento}"
+                                       shortDesc="#{bindings.PromocaoView1.hints.DataEncerramento.tooltip}" id="ot3">
+                            <af:convertDateTime pattern="#{bindings.PromocaoView1.hints.DataEncerramento.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.PromocaoView1.hints.Status.name}" sortable="true"
+                               headerText="#{bindings.PromocaoView1.hints.Status.label}" id="resId1c4">
+                        <af:selectOneChoice value="#{row.bindings.Status.inputValue}"
+                                            label="#{row.bindings.Status.label}"
+                                            required="#{bindings.PromocaoView1.hints.Status.mandatory}"
+                                            shortDesc="#{bindings.PromocaoView1.hints.Status.tooltip}" readOnly="true"
+                                            id="soc1">
+                            <f:selectItems value="#{row.bindings.Status.items}" id="si1"/>
+                            <f:validator binding="#{row.bindings.Status.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.PromocaoView1.hints.LocalEntrega.name}" sortable="true"
+                               headerText="#{bindings.PromocaoView1.hints.LocalEntrega.label}" id="resId1c5">
+                        <af:selectOneChoice value="#{row.bindings.LocalEntrega.inputValue}"
+                                            label="#{row.bindings.LocalEntrega.label}"
+                                            required="#{bindings.PromocaoView1.hints.LocalEntrega.mandatory}"
+                                            shortDesc="#{bindings.PromocaoView1.hints.LocalEntrega.tooltip}"
+                                            readOnly="true" id="soc2">
+                            <f:selectItems value="#{row.bindings.LocalEntrega.items}" id="si2"/>
+                            <f:validator binding="#{row.bindings.LocalEntrega.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.PromocaoView1.hints.ValorMaximoLance.name}" sortable="true"
+                               headerText="#{bindings.PromocaoView1.hints.ValorMaximoLance.label}" id="resId1c6">
+                        <af:outputText value="#{row.ValorMaximoLance}"
+                                       shortDesc="#{bindings.PromocaoView1.hints.ValorMaximoLance.tooltip}" id="ot4">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.PromocaoView1.hints.ValorMaximoLance.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.PromocaoView1.hints.ReceberEmDinheiro.name}" sortable="true"
+                               headerText="#{bindings.PromocaoView1.hints.ReceberEmDinheiro.label}" id="resId1c7">
+                        <af:outputText value="#{row.ReceberEmDinheiro}"
+                                       shortDesc="#{bindings.PromocaoView1.hints.ReceberEmDinheiro.tooltip}" id="ot5">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.PromocaoView1.hints.ReceberEmDinheiro.format}"/>
+                        </af:outputText>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

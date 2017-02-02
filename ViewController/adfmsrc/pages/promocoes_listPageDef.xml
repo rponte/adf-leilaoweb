@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.16.48" id="promocoes_listPageDef"
+                Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PromocaoView1" RangeSize="25" DataControl="AppModuleDataControl" id="PromocaoView1Iterator"/>
+    <searchRegion Criteria="PesquisaDePromocoesViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" Binds="PromocaoView1Iterator"
+                  id="PesquisaDePromocoesViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PromocaoView1Iterator" id="PromocaoView1">
+      <nodeDefinition DefName="br.com.triadworks.leilaoweb.model.PromocaoView" Name="PromocaoView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Nome"/>
+          <Item Value="DataEncerramento"/>
+          <Item Value="Status"/>
+          <Item Value="LocalEntrega"/>
+          <Item Value="ValorMaximoLance"/>
+          <Item Value="ReceberEmDinheiro"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

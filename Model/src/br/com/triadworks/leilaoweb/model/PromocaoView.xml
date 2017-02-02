@@ -13,6 +13,22 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="p_nome"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="p_status"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="p_dataEncerramento_ini"
+    Kind="viewcriteria"
+    Type="java.sql.Timestamp"/>
+  <Variable
+    Name="p_dataEncerramento_fim"
+    Kind="viewcriteria"
+    Type="java.sql.Timestamp"/>
   <ViewAccessor
     Name="StatusDaPromocaoViewList1"
     ViewObjectName="br.com.triadworks.leilaoweb.model.lists.StatusDaPromocaoViewList"
@@ -121,9 +137,95 @@
     EntityAttrName="ValorMaximoLance"
     EntityUsage="Promocao"
     AliasName="VALOR_MAXIMO_LANCE"/>
+  <ViewCriteria
+    Name="PesquisaDePromocoesViewCriteria"
+    ViewObjectName="br.com.triadworks.leilaoweb.model.PromocaoView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteria
+      Name="PromocaoViewSubCriteria1"
+      ViewObjectName="br.com.triadworks.leilaoweb.model.PromocaoView"
+      Conjunction="AND">
+      <ViewCriteriaRow
+        Name="PromocaoViewSubCriteria1_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="Nome"
+          ViewAttribute="Nome"
+          Operator="CONTAINS"
+          Conjunction="AND"
+          Required="Optional"
+          UpperColumns="1"
+          Value=":p_nome"
+          IsBindVarValue="true"/>
+      </ViewCriteriaRow>
+      <ViewCriteria
+        Name="PromocaoViewSubCriteria1"
+        ViewObjectName="br.com.triadworks.leilaoweb.model.PromocaoView"
+        Conjunction="AND">
+        <ViewCriteriaRow
+          Name="PromocaoViewSubCriteria1_row_0"
+          UpperColumns="1">
+          <ViewCriteriaItem
+            Name="Status"
+            ViewAttribute="Status"
+            Operator="="
+            Conjunction="AND"
+            Required="Optional"
+            Value=":p_status"
+            IsBindVarValue="true"
+            UpperColumns="0"/>
+        </ViewCriteriaRow>
+      </ViewCriteria>
+      <ViewCriteria
+        Name="PromocaoViewSubCriteria2"
+        ViewObjectName="br.com.triadworks.leilaoweb.model.PromocaoView"
+        Conjunction="AND">
+        <ViewCriteriaRow
+          Name="PromocaoViewSubCriteria2_row_0"
+          UpperColumns="1">
+          <ViewCriteriaItem
+            Name="DataEncerramento"
+            ViewAttribute="DataEncerramento"
+            Operator="BETWEEN"
+            Conjunction="AND"
+            Required="Optional">
+            <ViewCriteriaItemValue
+              Value=":p_dataEncerramento_ini"
+              IsBindVarValue="true"/>
+            <ViewCriteriaItemValue
+              Value=":p_dataEncerramento_fim"
+              IsBindVarValue="true"/>
+          </ViewCriteriaItem>
+        </ViewCriteriaRow>
+      </ViewCriteria>
+    </ViewCriteria>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="LanceView"
     ViewLink="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="br.com.triadworks.leilaoweb.model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>
