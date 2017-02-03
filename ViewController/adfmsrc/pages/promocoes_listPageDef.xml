@@ -23,5 +23,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="PromocaoView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
   </bindings>
 </pageDefinition>
