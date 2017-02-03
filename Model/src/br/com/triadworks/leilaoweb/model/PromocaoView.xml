@@ -136,14 +136,7 @@
     PrecisionRule="true"
     EntityAttrName="ValorMaximoLance"
     EntityUsage="Promocao"
-    AliasName="VALOR_MAXIMO_LANCE">
-    <Properties>
-      <SchemaBasedProperties>
-        <FMT_FORMATTER
-          ResId="br.com.triadworks.leilaoweb.model.PromocaoView.ValorMaximoLance_FMT_FORMATTER"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="VALOR_MAXIMO_LANCE"/>
   <ViewCriteria
     Name="PesquisaDePromocoesViewCriteria"
     ViewObjectName="br.com.triadworks.leilaoweb.model.PromocaoView"
