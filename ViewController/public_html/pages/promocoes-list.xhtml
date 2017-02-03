@@ -11,7 +11,7 @@
                               model="#{bindings.PesquisaDePromocoesViewCriteriaQuery.queryModel}"
                               queryListener="#{bindings.PesquisaDePromocoesViewCriteriaQuery.processQuery}"
                               queryOperationListener="#{bindings.PesquisaDePromocoesViewCriteriaQuery.processQueryOperation}"
-                              resultComponentId="::resId1"/>
+                              resultComponentId="::resId1" saveQueryMode="hidden" modeChangeVisible="false"/>
                 </af:panelHeader>
                 <af:table value="#{bindings.PromocaoView1.collectionModel}" var="row"
                           rows="#{bindings.PromocaoView1.rangeSize}"
