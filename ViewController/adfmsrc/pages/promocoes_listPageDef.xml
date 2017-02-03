@@ -28,5 +28,6 @@
             Action="setCurrentRowWithKey">
       <NamedData NDName="rowKey" NDValue="#{bindings.variables.currentRowWithKeyValue}" NDType="java.lang.String"/>
     </action>
+    <action IterBinding="PromocaoView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

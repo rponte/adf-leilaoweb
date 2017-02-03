@@ -16,6 +16,8 @@
                 <af:toolbar id="t1">
                     <af:button actionListener="#{bindings.CreateInsert.execute}" text="Novo"
                                disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="/pages/promocoes-edit"/>
+                    <af:button actionListener="#{bindings.Delete.execute}" text="Excluir"
+                               disabled="#{!bindings.Delete.enabled}" id="b2"/>
                 </af:toolbar>
                 <af:table value="#{bindings.PromocaoView1.collectionModel}" var="row"
                           rows="#{bindings.PromocaoView1.rangeSize}"
@@ -23,7 +25,7 @@
                           rowBandingInterval="0" selectedRowKeys="#{bindings.PromocaoView1.collectionModel.selectedRow}"
                           selectionListener="#{bindings.PromocaoView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.PromocaoView1.rangeSize}" id="resId1"
-                          columnStretching="column:resId1c2" partialTriggers="::b1 l1">
+                          columnStretching="column:resId1c2" partialTriggers="::b1 l1 ::b2">
                     <af:column sortProperty="#{bindings.PromocaoView1.hints.Id.name}" sortable="true"
                                headerText="#{bindings.PromocaoView1.hints.Id.label}" id="resId1c1">
                         <af:outputText value="#{row.Id}" shortDesc="#{bindings.PromocaoView1.hints.Id.tooltip}"
