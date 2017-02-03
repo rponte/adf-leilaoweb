@@ -23,7 +23,7 @@
                           rowBandingInterval="0" selectedRowKeys="#{bindings.PromocaoView1.collectionModel.selectedRow}"
                           selectionListener="#{bindings.PromocaoView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.PromocaoView1.rangeSize}" id="resId1"
-                          columnStretching="column:resId1c2" partialTriggers="::b1">
+                          columnStretching="column:resId1c2" partialTriggers="::b1 l1">
                     <af:column sortProperty="#{bindings.PromocaoView1.hints.Id.name}" sortable="true"
                                headerText="#{bindings.PromocaoView1.hints.Id.label}" id="resId1c1">
                         <af:outputText value="#{row.Id}" shortDesc="#{bindings.PromocaoView1.hints.Id.tooltip}"
@@ -81,6 +81,11 @@
                             <af:convertNumber groupingUsed="false"
                                               pattern="#{bindings.PromocaoView1.hints.ReceberEmDinheiro.format}"/>
                         </af:outputText>
+                    </af:column>
+                    <af:column id="c1">
+                        <af:link actionListener="#{bindings.setCurrentRowWithKey.execute}" text="Alterar"
+                                 disabled="#{!bindings.setCurrentRowWithKey.enabled}" id="l1"
+                                 action="promocoes-edit?faces-redirect=true"/>
                     </af:column>
                 </af:table>
             </af:panelGroupLayout>

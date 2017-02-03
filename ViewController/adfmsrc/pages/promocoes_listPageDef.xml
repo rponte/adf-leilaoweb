@@ -24,5 +24,9 @@
       </nodeDefinition>
     </tree>
     <action IterBinding="PromocaoView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="PromocaoView1Iterator" id="setCurrentRowWithKey" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDValue="#{bindings.variables.currentRowWithKeyValue}" NDType="java.lang.String"/>
+    </action>
   </bindings>
 </pageDefinition>
