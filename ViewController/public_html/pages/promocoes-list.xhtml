@@ -18,7 +18,8 @@
                           emptyText="#{bindings.PromocaoView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" selectedRowKeys="#{bindings.PromocaoView1.collectionModel.selectedRow}"
                           selectionListener="#{bindings.PromocaoView1.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.PromocaoView1.rangeSize}" id="resId1">
+                          rowSelection="single" fetchSize="#{bindings.PromocaoView1.rangeSize}" id="resId1"
+                          columnStretching="column:resId1c2">
                     <af:column sortProperty="#{bindings.PromocaoView1.hints.Id.name}" sortable="true"
                                headerText="#{bindings.PromocaoView1.hints.Id.label}" id="resId1c1">
                         <af:outputText value="#{row.Id}" shortDesc="#{bindings.PromocaoView1.hints.Id.tooltip}"
@@ -70,7 +71,7 @@
                     </af:column>
                     <af:column sortProperty="#{bindings.PromocaoView1.hints.ReceberEmDinheiro.name}" sortable="true"
                                headerText="#{bindings.PromocaoView1.hints.ReceberEmDinheiro.label}" id="resId1c7">
-                        <af:outputText value="#{row.ReceberEmDinheiro}"
+                        <af:outputText value="#{row.ReceberEmDinheiro == 1 ? 'Sim' : 'Não'}"
                                        shortDesc="#{bindings.PromocaoView1.hints.ReceberEmDinheiro.tooltip}" id="ot5">
                             <af:convertNumber groupingUsed="false"
                                               pattern="#{bindings.PromocaoView1.hints.ReceberEmDinheiro.format}"/>
