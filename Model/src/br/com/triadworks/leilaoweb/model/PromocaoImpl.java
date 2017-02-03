@@ -51,6 +51,8 @@ public class PromocaoImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int DATAENCERRAMENTO = AttributesEnum.DataEncerramento.index();
     public static final int LOCALENTREGA = AttributesEnum.LocalEntrega.index();
@@ -65,6 +67,14 @@ public class PromocaoImpl extends EntityImpl {
      */
     public PromocaoImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("br.com.triadworks.leilaoweb.model.Promocao");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -185,6 +195,7 @@ public class PromocaoImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(LANCES);
     }
 
+
     /**
      * @param id key constituent
 
@@ -195,15 +206,8 @@ public class PromocaoImpl extends EntityImpl {
     }
 
     /**
-     * @return the definition object for this instance class.
+     * Metodo invocado pelo ADF sempre que se cria uma instancia nova da entidade
      */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("br.com.triadworks.leilaoweb.model.Promocao");
-    }
-
-     /**
-      * Metodo invocado pelo ADF sempre que se cria uma instancia nova da entidade
-      */
      protected void create(AttributeList attributeList) {
          super.create(attributeList);
          // preenche campo com valor da sequence

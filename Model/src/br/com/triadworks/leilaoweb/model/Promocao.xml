@@ -25,7 +25,8 @@
     Type="java.lang.Long"
     ColumnType="NUMBER"
     TableName="TB_PROMOCAO"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"/>
   <Attribute
     Name="DataEncerramento"
     IsNotNull="true"
@@ -33,7 +34,8 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TB_PROMOCAO">
+    TableName="TB_PROMOCAO"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -48,7 +50,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TB_PROMOCAO">
+    TableName="TB_PROMOCAO"
+    IsUpdateable="while_insert">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="60"/>
     </DesignTime>
@@ -67,7 +70,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TB_PROMOCAO">
+    TableName="TB_PROMOCAO"
+    IsUpdateable="while_insert">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
@@ -81,7 +85,8 @@
     Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="TB_PROMOCAO"
-    DefaultValue="0">
+    DefaultValue="0"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -97,7 +102,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TB_PROMOCAO">
+    TableName="TB_PROMOCAO"
+    IsUpdateable="while_insert">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="40"/>
     </DesignTime>
@@ -111,7 +117,8 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TB_PROMOCAO"
-    Scale="2">
+    Scale="2"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
