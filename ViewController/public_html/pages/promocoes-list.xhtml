@@ -15,7 +15,7 @@
                 </af:panelHeader>
                 <af:table value="#{bindings.PromocaoView1.collectionModel}" var="row"
                           rows="#{bindings.PromocaoView1.rangeSize}"
-                          emptyText="#{bindings.PromocaoView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          emptyText="#{bindings.PromocaoView1.viewable ? 'Não há dados para serem exibidos.' : 'Acesso negado.'}"
                           rowBandingInterval="0" selectedRowKeys="#{bindings.PromocaoView1.collectionModel.selectedRow}"
                           selectionListener="#{bindings.PromocaoView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.PromocaoView1.rangeSize}" id="resId1"
