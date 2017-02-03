@@ -9,10 +9,8 @@
         
         <af:form id="f1" partialTriggers="btn-salvar btn-cancelar">
             <af:toolbar id="t1">
-                <af:button actionListener="#{bindings.Commit.execute}" text="Salvar"
-                           disabled="#{!bindings.Commit.enabled}" id="btn-salvar" action="promocoes-list"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancelar"
-                           disabled="#{!bindings.Rollback.enabled}" immediate="true" 
+                <af:button actionListener="#{bindings.Commit.execute}" text="Salvar" id="btn-salvar" action="promocoes-list"/>
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancelar" immediate="true" 
                            id="btn-cancelar" action="promocoes-list">
                     <af:resetActionListener/>
                 </af:button>
