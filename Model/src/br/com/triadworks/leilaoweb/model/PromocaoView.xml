@@ -80,21 +80,24 @@
     PrecisionRule="true"
     EntityAttrName="Id"
     EntityUsage="Promocao"
-    AliasName="ID"/>
+    AliasName="ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="DataEncerramento"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="DataEncerramento"
     EntityUsage="Promocao"
-    AliasName="DATA_ENCERRAMENTO"/>
+    AliasName="DATA_ENCERRAMENTO"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="LocalEntrega"
     PrecisionRule="true"
     EntityAttrName="LocalEntrega"
     EntityUsage="Promocao"
     AliasName="LOCAL_ENTREGA"
-    LOVName="LOV_LocalEntrega">
+    LOVName="LOV_LocalEntrega"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -108,13 +111,15 @@
     PrecisionRule="true"
     EntityAttrName="Nome"
     EntityUsage="Promocao"
-    AliasName="NOME"/>
+    AliasName="NOME"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="ReceberEmDinheiro"
     PrecisionRule="true"
     EntityAttrName="ReceberEmDinheiro"
     EntityUsage="Promocao"
-    AliasName="RECEBER_EM_DINHEIRO"/>
+    AliasName="RECEBER_EM_DINHEIRO"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="Status"
     IsNotNull="true"
@@ -122,7 +127,8 @@
     EntityAttrName="Status"
     EntityUsage="Promocao"
     AliasName="STATUS"
-    LOVName="LOV_Status">
+    LOVName="LOV_Status"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -136,7 +142,8 @@
     PrecisionRule="true"
     EntityAttrName="ValorMaximoLance"
     EntityUsage="Promocao"
-    AliasName="VALOR_MAXIMO_LANCE"/>
+    AliasName="VALOR_MAXIMO_LANCE"
+    IsUpdateable="while_insert"/>
   <ViewCriteria
     Name="PesquisaDePromocoesViewCriteria"
     ViewObjectName="br.com.triadworks.leilaoweb.model.PromocaoView"
