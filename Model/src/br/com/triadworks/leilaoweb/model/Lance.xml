@@ -10,7 +10,8 @@
   DBObjectName="TB_LANCE"
   AliasName="Lance"
   BindingStyle="OracleName"
-  RowClass="br.com.triadworks.leilaoweb.model.LanceImpl">
+  RowClass="br.com.triadworks.leilaoweb.model.LanceImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Init|Access"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -76,7 +77,17 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TB_LANCE"
-    Scale="2"/>
+    Scale="2">
+    <validation:CompareValidationBean
+      Name="ValorRule_maiorQueZero"
+      ResId="br.com.triadworks.leilaoweb.model.Lance.Valor_Rule_0"
+      Description="Valor do lance deve ser maior que zero"
+      OnAttribute="Valor"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="0.0"/>
+  </Attribute>
   <Attribute
     Name="FuncionarioId"
     IsNotNull="true"
