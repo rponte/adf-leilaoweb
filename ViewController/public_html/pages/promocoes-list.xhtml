@@ -14,10 +14,20 @@
                               resultComponentId="::resId1" saveQueryMode="hidden" modeChangeVisible="false"/>
                 </af:panelHeader>
                 <af:toolbar id="t1">
-                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="Novo"
-                               disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="/pages/promocoes-edit"/>
-                    <af:button actionListener="#{bindings.Delete.execute}" text="Excluir"
-                               disabled="#{!bindings.Delete.enabled}" id="b2"/>
+                    <af:group id="g2">
+                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="Novo"
+                                   disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="/pages/promocoes-edit"/>
+                        <af:button actionListener="#{bindings.Delete.execute}" text="Excluir"
+                                   disabled="#{!bindings.Delete.enabled}" id="b2"/>
+                    </af:group>
+                    <af:group id="g1">
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Salvar"
+                                   disabled="#{!bindings.Commit.enabled}" id="b3"/>
+                        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancelar"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b4">
+                            <af:resetActionListener/>
+                        </af:button>
+                    </af:group>
                 </af:toolbar>
                 <af:table value="#{bindings.PromocaoView1.collectionModel}" var="row"
                           rows="#{bindings.PromocaoView1.rangeSize}"
