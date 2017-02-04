@@ -50,6 +50,7 @@ public class LanceImpl extends EntityImpl {
         }
     }
 
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int CUPOMNUMERO = AttributesEnum.CupomNumero.index();
     public static final int DATACRIACAO = AttributesEnum.DataCriacao.index();
@@ -70,6 +71,7 @@ public class LanceImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("br.com.triadworks.leilaoweb.model.Lance");
     }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
