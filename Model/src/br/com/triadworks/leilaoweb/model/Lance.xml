@@ -87,6 +87,18 @@
       Inverse="false"
       CompareType="GREATERTHAN"
       CompareValue="0.0"/>
+    <validation:CompareValidationBean
+      Name="ValorRule_naoExcedeuValorMaximoDaPromocao"
+      ResId="br.com.triadworks.leilaoweb.model.Lance.Valor_Rule_1"
+      OnAttribute="Valor"
+      OperandType="EXPR"
+      Inverse="false"
+      CompareType="LESSTHANEQUALTO">
+      <validation:TransientExpression
+        Name="ValidationRuleScript"
+        trustMode="untrusted"
+        CodeSourceName="LanceRow"/>
+    </validation:CompareValidationBean>
   </Attribute>
   <Attribute
     Name="FuncionarioId"
