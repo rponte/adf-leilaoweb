@@ -43,6 +43,7 @@ public class FuncionarioImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int CPF = AttributesEnum.Cpf.index();
     public static final int EMAIL = AttributesEnum.Email.index();
@@ -52,6 +53,13 @@ public class FuncionarioImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public FuncionarioImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("br.com.triadworks.leilaoweb.model.Funcionario");
     }
 
     /**
@@ -118,6 +126,7 @@ public class FuncionarioImpl extends EntityImpl {
         setAttributeInternal(NOME, value);
     }
 
+
     /**
      * @param id key constituent
 
@@ -125,13 +134,6 @@ public class FuncionarioImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(Long id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("br.com.triadworks.leilaoweb.model.Funcionario");
     }
 
     /**

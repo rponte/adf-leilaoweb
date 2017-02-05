@@ -140,6 +140,13 @@
     AssociationOtherEnd="br.com.triadworks.leilaoweb.model.FkLancePromocaoIdAssoc.Lances"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Funcionario"
+    Association="br.com.triadworks.leilaoweb.model.FkLanceFuncionarioIdAssoc"
+    AssociationEnd="br.com.triadworks.leilaoweb.model.FkLanceFuncionarioIdAssoc.Funcionario"
+    AssociationOtherEnd="br.com.triadworks.leilaoweb.model.FkLanceFuncionarioIdAssoc.Lance"
+    Type="br.com.triadworks.leilaoweb.model.FuncionarioImpl"
+    IsUpdateable="true"/>
   <Key
     Name="SysC0040627"
     PrimaryKey="true">
@@ -170,6 +177,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="br.com.triadworks.leilaoweb.model.Lance.PromocaoId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Lance">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C0040549"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_LANCE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="br.com.triadworks.leilaoweb.model.Lance.FuncionarioId"/>
     </AttrArray>
   </Key>
   <validation:MethodValidationBean

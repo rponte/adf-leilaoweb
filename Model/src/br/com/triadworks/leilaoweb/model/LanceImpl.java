@@ -28,7 +28,8 @@ public class LanceImpl extends EntityImpl {
         Valor,
         FuncionarioId,
         PromocaoId,
-        Promocao;
+        Promocao,
+        Funcionario;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -60,6 +61,7 @@ public class LanceImpl extends EntityImpl {
     public static final int FUNCIONARIOID = AttributesEnum.FuncionarioId.index();
     public static final int PROMOCAOID = AttributesEnum.PromocaoId.index();
     public static final int PROMOCAO = AttributesEnum.Promocao.index();
+    public static final int FUNCIONARIO = AttributesEnum.Funcionario.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -180,6 +182,29 @@ public class LanceImpl extends EntityImpl {
 
 
     /**
+     * @return the associated entity FuncionarioImpl.
+     */
+    public FuncionarioImpl getFuncionario() {
+        return (FuncionarioImpl) getAttributeInternal(FUNCIONARIO);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity FuncionarioImpl.
+     */
+    public void setFuncionario(FuncionarioImpl value) {
+        setAttributeInternal(FUNCIONARIO, value);
+    }
+
+    /**
+     * @param id key constituent
+
+     * @return a Key object based on given key constituents.
+     */
+    public static Key createPrimaryKey(Long id) {
+        return new Key(new Object[] { id });
+    }
+
+    /**
      * Valida lance
      */
     public boolean validateLance() {
@@ -201,14 +226,6 @@ public class LanceImpl extends EntityImpl {
         return true;
     }
 
-    /**
-     * @param id key constituent
-
-     * @return a Key object based on given key constituents.
-     */
-    public static Key createPrimaryKey(Long id) {
-        return new Key(new Object[] { id });
-    }
 
     /**
      * Metodo invocado pelo ADF sempre que se cria uma instancia nova da entidade
