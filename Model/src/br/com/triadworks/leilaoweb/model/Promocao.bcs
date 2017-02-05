@@ -1,0 +1,12 @@
+//Groovy Scripts for br.com.triadworks.leilaoweb.model.Promocao
+
+package br.com.triadworks.leilaoweb.model
+
+import oracle.jbo.script.annotation.ValidatorExpression;
+
+@ValidatorExpression(name="DataEncerramentoRule_deveSerNoFuturo", attributeName="DataEncerramento")
+def DataEncerramento_DataEncerramentoRule_deveSerNoFuturo_ValidationRuleScript_ValidationRule()
+{
+adf.currentDate + 30
+}
+

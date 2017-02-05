@@ -10,7 +10,8 @@
   DBObjectName="TB_PROMOCAO"
   AliasName="Promocao"
   BindingStyle="OracleName"
-  RowClass="br.com.triadworks.leilaoweb.model.PromocaoImpl">
+  RowClass="br.com.triadworks.leilaoweb.model.PromocaoImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Init|Access"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -42,6 +43,18 @@
           ResId="br.com.triadworks.leilaoweb.model.Promocao.DataEncerramento_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:CompareValidationBean
+      Name="DataEncerramentoRule_deveSerNoFuturo"
+      ResId="br.com.triadworks.leilaoweb.model.Promocao.DataEncerramento_Rule_0"
+      OnAttribute="DataEncerramento"
+      OperandType="EXPR"
+      Inverse="false"
+      CompareType="GREATERTHAN">
+      <validation:TransientExpression
+        Name="ValidationRuleScript"
+        trustMode="untrusted"
+        CodeSourceName="PromocaoRow"/>
+    </validation:CompareValidationBean>
   </Attribute>
   <Attribute
     Name="LocalEntrega"
