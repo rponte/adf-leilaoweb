@@ -107,6 +107,8 @@
                                       shortDesc="#{bindings.LanceView2.hints.Valor.tooltip}" id="it4">
                             <f:validator binding="#{row.bindings.Valor.validator}"/>
                             <af:convertNumber groupingUsed="false" pattern="#{bindings.LanceView2.hints.Valor.format}"/>
+                            <af:validateDoubleRange maximum="#{bindings.ValorMaximoLance.inputValue}"
+                                                    messageDetailMaximum="Valor superior ao máximo permitido na promoção"/>
                         </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.LanceView2.hints.CupomNumero.name}" sortable="true"
