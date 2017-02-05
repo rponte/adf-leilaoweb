@@ -172,6 +172,10 @@
       <Item Value="br.com.triadworks.leilaoweb.model.Lance.PromocaoId"/>
     </AttrArray>
   </Key>
+  <validation:MethodValidationBean
+    Name="LanceRule_numeroMaximoDeLancesPorCliente"
+    MethodName="validateLance"
+    ResId="br.com.triadworks.leilaoweb.model.Lance_Rule_0"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="br.com.triadworks.leilaoweb.model.ModelBundle"/>

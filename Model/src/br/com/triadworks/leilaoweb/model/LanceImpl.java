@@ -6,6 +6,8 @@ import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.Row;
+import oracle.jbo.RowIterator;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
 import oracle.jbo.server.SequenceImpl;
@@ -176,6 +178,28 @@ public class LanceImpl extends EntityImpl {
         setAttributeInternal(PROMOCAO, value);
     }
 
+
+    /**
+     * Valida lance
+     */
+    public boolean validateLance() {
+
+        int total = 0;
+        
+        RowIterator lances = getPromocao().getLances();
+        while (lances.hasNext()) {
+            LanceImpl lance = (LanceImpl) lances.next();
+            if (lance.getFuncionarioId().equals(this.getFuncionarioId())) {
+                total++;
+            }
+        }
+        
+        if (total > 3) {
+            return false;
+        }
+
+        return true;
+    }
 
     /**
      * @param id key constituent
