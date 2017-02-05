@@ -4,6 +4,7 @@ package br.com.triadworks.leilaoweb.model
 
 import oracle.jbo.script.annotation.TransientValueExpression;
 import oracle.jbo.script.annotation.ValidatorExpression;
+import oracle.jbo.script.annotation.MessageParameterExpression;
 
 @TransientValueExpression(attributeName="DataCriacao")
 def DataCriacao_ExpressionScript_Expression()
@@ -16,5 +17,12 @@ adf.currentDateTime
 def Valor_ValorRule_naoExcedeuValorMaximoDaPromocao_ValidationRuleScript_ValidationRule()
 {
 Promocao.ValorMaximoLance
+}
+
+
+@MessageParameterExpression(validatorName="LanceRule_numeroMaximoDeLancesPorCliente", name="ResExpressions_Funcionario")
+def LanceRule_numeroMaximoDeLancesPorCliente_ResExpressions_Funcionario_MessageParameterValues()
+{
+Funcionario.Nome
 }
 

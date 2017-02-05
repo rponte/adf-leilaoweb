@@ -193,7 +193,15 @@
   <validation:MethodValidationBean
     Name="LanceRule_numeroMaximoDeLancesPorCliente"
     MethodName="validateLance"
-    ResId="br.com.triadworks.leilaoweb.model.Lance_Rule_0"/>
+    ResId="br.com.triadworks.leilaoweb.model.Lance_Rule_0">
+    <validation:ResExpressions
+      Name="LanceRule_numeroMaximoDeLancesPorCliente_ResExprList">
+      <validation:Expression
+        Name="Funcionario"
+        trustMode="untrusted"
+        CodeSourceName="LanceRow"/>
+    </validation:ResExpressions>
+  </validation:MethodValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="br.com.triadworks.leilaoweb.model.ModelBundle"/>
