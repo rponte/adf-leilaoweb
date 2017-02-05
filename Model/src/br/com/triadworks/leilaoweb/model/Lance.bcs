@@ -16,7 +16,7 @@ adf.currentDateTime
 @ValidatorExpression(name="ValorRule_naoExcedeuValorMaximoDaPromocao", attributeName="Valor")
 def Valor_ValorRule_naoExcedeuValorMaximoDaPromocao_ValidationRuleScript_ValidationRule()
 {
-Promocao.ValorMaximoLance
+adf.object.Promocao.ValorMaximoLance
 }
 
 
